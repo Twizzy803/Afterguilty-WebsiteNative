@@ -33,4 +33,18 @@
 #Daftar a{
     color: #fff;
     font-family: 'Roboto', sans-serif;
+    
+}
+#wilayah{
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    color: #fff;
+    border: 0px;
+}
+.logo{
+    display: block ;
+    position: relative;
+    font-family: 'Poiret One', cursive;
+    font-size: 40px;
 }
