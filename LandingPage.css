@@ -2,9 +2,20 @@
     margin: 0;
 }
 #rectangel_17{
-    position: absolute;
+    display: block;
+    background: #000;
+    color: #fff;
+    width: auto;
+    height: 60px;
+}
+.Tulisan1 p{
+    position: relative;
+    display: block;
+    top: 20px;
 }
 .Tulisan2 p{
+    position: relative;
     display: block;
-    top: 5px;
+    text-align: center;
+
 }
