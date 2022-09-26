@@ -7,15 +7,26 @@
     color: #fff;
     width: auto;
     height: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
 }
 .Tulisan1 p{
     position: relative;
     display: block;
-    top: 20px;
+    top: 10%;
+    left: 0%;
 }
 .Tulisan2 p{
     position: relative;
     display: block;
     text-align: center;
-
+    top: 10%;
+}
+#Daftar{
+    display: block;
+    position: relative;
+    color: #fff;
+    text-align: right;
+    bottom: 25%;
+    right: 5%;
 }
