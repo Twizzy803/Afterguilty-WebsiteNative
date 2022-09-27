@@ -67,6 +67,19 @@
     display: flex;
     position: absolute;
     top: 14%;
-    left: 50%;
+    left: 29%;
+}
+.boxs-pencarian{
+    position: relative;
+    top: 10px;
+    padding: 0px 250px 0px 50px;
+    background: #EEEDED;
+    border: 5px;
+    border-radius: 8px;
+    text-align: left;
+}
+.gm-cari{
+    position: relative;
+    top: 10px;
     
 }
