@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    margin: 0;
+}
 #rectangel_17{
     display: block;
     background: #000;
@@ -27,7 +30,7 @@
     display: block;
     position: relative;
     float: right;
-    bottom: 25%;
+    bottom: 27%;
     right: 2%;
 }
 #Daftar a{
@@ -71,8 +74,8 @@
 }
 .boxs-pencarian{
     position: relative;
-    top: 10px;
-    padding: 0px 250px 0px 50px;
+    top: 10%;
+    padding: 4px 250px 4px 50px;
     background: #EEEDED;
     border: 5px;
     border-radius: 8px;
@@ -80,6 +83,12 @@
 }
 .gm-cari{
     position: relative;
-    top: 10px;
-    
+    top: 4px;
+    right: 92%;
+}
+.btn-beli{
+    position: relative;
+    width: 37px;
+    float: right;
+    bottom: 95px;
 }
