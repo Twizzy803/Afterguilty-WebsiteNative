@@ -45,6 +45,28 @@
 .logo{
     display: block ;
     position: relative;
-    font-family: 'Poiret One', cursive;
-    font-size: 40px;
+}
+.nama1{
+    font-family: 'Poiret One', sans-serif;
+    font-weight: lighter;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 51px;
+}
+.nama2{
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 53px;
+    bottom: 50px;
+    left: 18%;
+}
+.btn-cari{
+    display: flex;
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    
 }
