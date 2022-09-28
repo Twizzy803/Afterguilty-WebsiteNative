@@ -15,7 +15,7 @@ body{
     font-size: 15px;
 }
 .Tulisan1 p{
-    position: relative;
+    position: absolute;
     display: block;
     top: 17px;
     left: 2%;
@@ -24,13 +24,13 @@ body{
     position: relative;
     display: block;
     text-align: center;
-    top: 10%;
+    top: 18px;
 }
 #Daftar{
     display: block;
     position: relative;
     float: right;
-    bottom: 27%;
+    bottom: 7%;
     right: 2%;
 }
 #Daftar a{
@@ -48,21 +48,28 @@ body{
 .logo{
     display: block ;
     position: relative;
+    margin-bottom: 13px;
+    box-shadow:  0 5px 1px rgba(#000000, .15);
 }
-.nama1{
+.nama1 p{
+    position: flex;
     font-family: 'Poiret One', sans-serif;
     font-weight: lighter;
     font-weight: 400;
     font-size: 44px;
     line-height: 51px;
+    left: 10px;
+    top: 2px;
 }
-.nama2{
-    position: relative;
+.nama2 p{
+    position: absolute;
+    padding: auto;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: 44px;
-    bottom: 50px;
-    left: 18%;
+    bottom: -6px;
+    left: 19%;
+
 }
 .btn-cari{
     display: flex;
@@ -71,8 +78,8 @@ body{
     left: 29%;
 }
 .boxs-pencarian{
-    position: relative;
-    top: 10%;
+    position: absolute;
+    top: 12px;
     padding: 4px 250px 4px 50px;
     background: #EEEDED;
     border: 5px;
@@ -80,14 +87,43 @@ body{
     text-align: left;
 }
 .gm-cari{
-    position: relative;
-    top: 4px;
-    right: 92%;
+    position: absolute;
+    top: 16px;
+    right: -30px;
 }
-.btn-beli{
-    position: relative;
-    height: 37px;
+.btn-beli img{
+    position: absolute;
     float: right;
-    bottom: 95px;
-    right: 15%;
+    top: 10px;
+    right: 10%;
+    height: 35px;
+}
+.btn-favor img{
+    position: absolute;
+    right: 6%;
+    top: 14px;
+    height: 30px;
+}
+.btn-profil img{
+    position: absolute;
+    right: 2%;
+    top: 15px;
+    height: 30px;
+}
+.katalog1 img{
+    height: 592px;
+}
+.teks1 p{
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 41px;
+    left: 5%;
+}
+.teks1 img{
+    position: absolute;
+    left: 50px;
+    padding-left: 90px;
 }
