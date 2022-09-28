@@ -60,9 +60,7 @@ body{
     position: relative;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-weight: 400;
     font-size: 44px;
-    line-height: 53px;
     bottom: 50px;
     left: 18%;
 }
@@ -88,7 +86,8 @@ body{
 }
 .btn-beli{
     position: relative;
-    width: 37px;
+    height: 37px;
     float: right;
     bottom: 95px;
+    right: 15%;
 }
