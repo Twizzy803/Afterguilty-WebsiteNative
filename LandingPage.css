@@ -4,6 +4,7 @@
 }
 body{
     margin: 0;
+    background: #E3E3E3;
 }
 #rectangel_17{
     display: block;
@@ -111,6 +112,7 @@ body{
     height: 30px;
 }
 .katalog1 img{
+    position: relative;
     height: 592px;
 }
 .teks1 p{
@@ -121,9 +123,18 @@ body{
     font-size: 35px;
     line-height: 41px;
     left: 5%;
+    font-weight: bold;
 }
 .teks1 img{
+    position: relative;
+    left: 21%;
+    width: 60%;
+    top: 10px;
+}
+.teks2 p{
     position: absolute;
-    left: 50px;
-    padding-left: 90px;
+    font-family: 'Roboto';
+    text-align: right;
+    right: 12%;
+    bottom: -38%;
 }
