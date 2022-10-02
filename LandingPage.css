@@ -12,7 +12,7 @@ body{
     background: #000;
     color: #fff;
     width: auto;
-    height: 60px;
+    height: 50px;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
 }
@@ -110,8 +110,8 @@ body{
 .btn-profil img{
     position: absolute;
     right: 2%;
-    top: 15px;
-    height: 30px;
+    top: 12px;
+    height: 32px;
 }
 .katalog1 img{
     position: relative;
@@ -141,5 +141,15 @@ body{
     text-align: right;
     font-size: 21px;
     right: 10%;
-    bottom: -39%;
+    bottom: -37%;
+}
+.love img{
+    position: absolute;
+    top: 4%; 
+    left: 23px;
+    width: 28px;
+}
+.box1 {
+    position: relative;
+    top: -450px;
 }
