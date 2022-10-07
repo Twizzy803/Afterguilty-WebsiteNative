@@ -1,44 +1,51 @@
 *{
     margin: 0;
+    padding: 0;
 }
 body{
     margin: 0;
     padding: 0;
     background: #E3E3E3;
 }
-#rectangel_17{
-    display: block;
+#rectangel{
+    display: flex;
+    position: absolute;
     margin: 0;
     background: #000;
     color: #fff;
-    width: auto;
+    width: 100%;
     height: 50px;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
 }
 .Tulisan1 p{
     position: absolute;
-    display: block;
+    display: flex;
     top: 17px;
     left: 2%;
 }
 .Tulisan2 p{
-    position: relative;
-    display: block;
+    position: absolute;
+    display: flex;
     text-align: center;
     top: 18px;
+    left: 34%;
 }
 #Daftar{
-    display: block;
-    position: relative;
+    display: flex;
+    position: absolute;
     float: right;
-    bottom: 7%;
+    top: 15px;
     right: 2%;
 }
 #Daftar a{
     color: #fff;
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    text-decoration: none;
+}
+#Daftar a:hover{
+    text-decoration: underline;
 }
 #wilayah{
     display: inline;
@@ -48,10 +55,11 @@ body{
     border: 0px;
 }
 .logo{
-    display: block ;
+    display: flex ;
     position: relative;
     margin-bottom: 13px;
     box-shadow:  0 5px 1px rgba(#000000, .15);
+    top: 50px;
 }
 .nama1 p{
     position: flex;
@@ -63,6 +71,7 @@ body{
     left: 10px;
     top: 2px;
     margin-left: 17px;
+    data-aos:"flip-left"
 }
 .nama2 p{
     position: absolute;
@@ -113,11 +122,48 @@ body{
     top: 12px;
     height: 32px;
 }
-.katalog1 img{
+.katalog1{
+    display: flex;
     position: relative;
-    width: auto;
+    top: 50px;
+    transform: translate(0px);
+    opacity: 1;
+    transition: all 0.7s ease;
+}
+.katalog1 img{
+    display: flex;
+    width: 100%;
     height: 592px;
     margin: 0;
+    transform: translate(0px);
+    opacity: 1;
+    
+}
+.katalog1 a{
+    display: flex;
+    margin: 0;
+    position: absolute;
+    background: #FF3939;
+    padding: 17px 45px 17px 45px;
+    top: 450px;
+    right: 160px;
+    float: right;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 23px;
+    text-decoration: none;
+}
+.katalog1 a:hover{
+    background: #f95d5d;
+}
+.new{
+    display: flex;
+    position: relative;
+    top: 20px;
+    transform: skew(50px);
+    transition: all 0.7s ease;
 }
 .teks1 p{
     position: absolute;
@@ -128,10 +174,13 @@ body{
     line-height: 41px;
     left: 5%;
     font-weight: bold;
+    transform: translate(0px);
+    opacity: 1;
 }
 .teks1 img{
+    display: inline-flex;
     position: relative;
-    left: 21%;
+    left: 30%;
     width: 60%;
     top: 10px;
 }
@@ -140,8 +189,9 @@ body{
     font-family: 'Roboto';
     text-align: right;
     font-size: 21px;
+    top: 10px;
     right: 10%;
-    bottom: -37%;
+    bottom: -41%;
 }
 .love img{
     position: absolute;
@@ -150,6 +200,62 @@ body{
     width: 28px;
 }
 .box1 {
+    display: flex;
     position: relative;
     top: -450px;
+}
+.comingsoon p{
+    position: relative;
+    text-align: center;
+    top: 85px;
+    font-family: Roboto;
+    font-size: 50px;
+}
+.comingsoon img{
+    display: flex;
+    position: relative;
+    width: 1264px;
+    top: 110px;
+}
+.comingsoon a{
+    display: flex;
+    position: absolute;
+    margin: 0;
+    background: #000000;
+    padding: 17px 90px 17px 20px;
+    top: 326%;
+    left: 70px;
+    color: #BEBEBE;
+    text-align: left;
+    font-family: Roboto;
+    font-weight: lighter;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+.comingsoon a:hover{
+    background: #ffffff;
+
+}
+.elemen{
+    position: relative;
+    transform: translate(50px);
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+.tampil{
+    position: relative;
+    transform: translate(0px);
+    opacity: 1;
+}
+@media screen and (max-widht: 1016px) {
+    #rectangel{
+        display: flex;
+        width: 100%;
+        font-size: 5px;
+    }
+    .nama1 p{
+        display: flex;
+        font-size: 20px;
+    }
 }
