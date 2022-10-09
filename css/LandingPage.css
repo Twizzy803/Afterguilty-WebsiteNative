@@ -34,9 +34,9 @@ body{
 #Daftar{
     display: flex;
     position: absolute;
-    float: right;
+    width: 17%;
     top: 15px;
-    right: 2%;
+    left: 83%;
 }
 #Daftar a{
     color: #fff;
@@ -55,10 +55,13 @@ body{
     border: 0px;
 }
 .logo{
-    display: flex ;
+    display: flex;
     position: relative;
-    margin-bottom: 13px;
-    box-shadow:  0 5px 1px rgba(#000000, .15);
+    width: 100%;
+    align-items: center;
+    height: 70px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     top: 50px;
 }
 .nama1 p{
@@ -78,8 +81,8 @@ body{
     padding: auto;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 44px;
-    bottom: -6px;
+    font-size: 40px;
+    top: 24px;
     left: 19%;
 
 }
@@ -125,7 +128,7 @@ body{
 .katalog1{
     display: flex;
     position: relative;
-    top: 50px;
+    top: 45px;
     transform: translate(0px);
     opacity: 1;
     transition: all 0.7s ease;
@@ -134,18 +137,16 @@ body{
     display: flex;
     width: 100%;
     height: 592px;
-    margin: 0;
     transform: translate(0px);
-    opacity: 1;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     
 }
 .katalog1 a{
     display: flex;
-    margin: 0;
     position: absolute;
     background: #FF3939;
     padding: 17px 45px 17px 45px;
-    top: 450px;
+    top: 480px;
     right: 160px;
     float: right;
     border: none;
@@ -161,7 +162,7 @@ body{
 .new{
     display: flex;
     position: relative;
-    top: 20px;
+    top: 25px;
     transform: skew(50px);
     transition: all 0.7s ease;
 }
@@ -172,7 +173,7 @@ body{
     font-weight: 500;
     font-size: 35px;
     line-height: 41px;
-    left: 5%;
+    left: 2%;
     font-weight: bold;
     transform: translate(0px);
     opacity: 1;
@@ -180,8 +181,8 @@ body{
 .teks1 img{
     display: inline-flex;
     position: relative;
-    left: 30%;
-    width: 60%;
+    left: 25%;
+    width: 80%;
     top: 10px;
 }
 .teks2 p{
@@ -190,7 +191,7 @@ body{
     text-align: right;
     font-size: 21px;
     top: 10px;
-    right: 10%;
+    right: 5%;
     bottom: -41%;
 }
 .love img{
@@ -204,6 +205,33 @@ body{
     position: relative;
     top: -450px;
 }
+.item1 img:hover{
+    transition: all 0.2 ease-in-out;
+    transform: scale(1.2);
+}
+#box1_item{
+    position: relative;
+}
+.panah_kanan img{
+    display: flex;
+    position: absolute;
+    width: 50px;
+    background: #ffffff;
+    top: 270px;
+    left: 93%;
+}
+/* .panah_kiri img{
+    display: flex;
+    position: absolute;
+    width: 50px;
+    background: #ffffff;
+    top: 270px;
+    left: 2%;
+} */
+.panah img:hover{
+    transition: all 0.2 ease-in-out;
+    transform: scale(1.2);
+}
 .comingsoon p{
     position: relative;
     text-align: center;
@@ -214,16 +242,17 @@ body{
 .comingsoon img{
     display: flex;
     position: relative;
-    width: 1264px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
     top: 110px;
 }
-.comingsoon a{
+.moreinfo{
     display: flex;
     position: absolute;
-    margin: 0;
     background: #000000;
     padding: 17px 90px 17px 20px;
-    top: 326%;
+    top: 313%;
     left: 70px;
     color: #BEBEBE;
     text-align: left;
@@ -233,25 +262,23 @@ body{
     border: none;
     border-radius: 5px;
 }
-.comingsoon a:hover{
+.moreinfo:hover{
     background: #ffffff;
-
 }
-.elemen{
+.new2{
+    display: flex;
     position: relative;
-    transform: translate(50px);
-    opacity: 0;
+    top: 145px;
+    transform: skew(50px);
     transition: all 0.7s ease;
 }
-.tampil{
+#box2_item{
     position: relative;
-    transform: translate(0px);
-    opacity: 1;
+    top: 130px;
 }
-@media screen and (max-widht: 1016px) {
+@media screen and (max-widht: 892px) {
     #rectangel{
-        display: flex;
-        width: 100%;
+        width: 50%;
         font-size: 5px;
     }
     .nama1 p{
