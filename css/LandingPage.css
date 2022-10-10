@@ -6,6 +6,7 @@ body{
     margin: 0;
     padding: 0;
     background: #E3E3E3;
+    font-family: 'Roboto';
 }
 #rectangel{
     display: flex;
@@ -74,15 +75,14 @@ body{
     left: 10px;
     top: 2px;
     margin-left: 17px;
-
 }
 .nama2 p{
     position: absolute;
     padding: auto;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 40px;
-    top: 24px;
+    font-size: 30px;
+    top: 30px;
     left: 19%;
 
 }
@@ -190,6 +190,8 @@ body{
     font-family: 'Roboto';
     text-align: right;
     font-size: 21px;
+    font-weight: lighter;
+    opacity: 0.5;
     top: 10px;
     right: 5%;
     bottom: -41%;
@@ -202,23 +204,23 @@ body{
 }
 .box1 {
     display: flex;
-    position: relative;
     top: -450px;
 }
 .item1 img:hover{
-    transition: all 0.2 ease-in-out;
-    transform: scale(1.2);
+    transition: all 0.4 ease-in-out;
+    transform: scale(1.1);
 }
 #box1_item{
     position: relative;
+    bottom: 450px;
 }
 .panah_kanan img{
     display: flex;
     position: absolute;
     width: 50px;
     background: #ffffff;
-    top: 270px;
-    left: 93%;
+    top: 730px;
+    left: 93.5%;
 }
 /* .panah_kiri img{
     display: flex;
@@ -235,7 +237,7 @@ body{
 .comingsoon p{
     position: relative;
     text-align: center;
-    top: 85px;
+    top: 580px;
     font-family: Roboto;
     font-size: 50px;
 }
@@ -245,9 +247,9 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
-    top: 110px;
+    top: 610px;
 }
-.moreinfo{
+.comingsoon a{
     display: flex;
     position: absolute;
     background: #000000;
@@ -262,19 +264,28 @@ body{
     border: none;
     border-radius: 5px;
 }
-.moreinfo:hover{
+.comingsoon a:hover{
     background: #ffffff;
 }
 .new2{
     display: flex;
     position: relative;
-    top: 145px;
+    top: 640px;
     transform: skew(50px);
     transition: all 0.7s ease;
 }
 #box2_item{
     position: relative;
-    top: 130px;
+    top: 175px;
+}
+.new3{
+    display: flex;
+    position: relative;
+    top: 1220px;
+}
+#box3_item{
+    position: relative;
+    top: 750px;
 }
 @media screen and (max-widht: 892px) {
     #rectangel{
