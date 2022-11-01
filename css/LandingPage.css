@@ -306,10 +306,48 @@ body{
     position: relative;
     top: 1200px;}
 .container{
-    display: block;
-    position: relative;
-    top: 2500px;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    background-color: #eeeeee;
+    margin: auto;
+    top: 600%;
+    font-family: 'Roboto', sans-serif;
 }
+.list-2{
+    margin-left: 100px;
+}
+.list-3{
+    margin-left: 100px;
+}
+.list-4{
+    margin-left: 100px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 41px 0 100px 120px;
+}
+.row ul li{
+    list-style: none;
+    padding-top: 10px;
+    
+}
+.row ul li a{
+    text-decoration: none;
+    color: #000000b2;
+    font-weight: lighter;
+}
+footer p{
+    position: relative;
+    padding: 30px 0 30px 0;
+    margin-left: 45%;
+    margin-right: 10%;
+    display: flex;
+    color: #000000b2;
+    font-weight: lighter;
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 989px) {
     #rectangel{
