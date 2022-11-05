@@ -107,7 +107,7 @@ body{
     top: 12px;
     padding: 4px 250px 4px 50px;
     background: #EEEDED;
-    border: 5px;
+    border: 1px solid #707070;
     border-radius: 8px;
     text-align: left;
 }
@@ -306,6 +306,7 @@ body{
     position: relative;
     top: 1200px;}
 .container{
+    font-size: 14px;
     display: flex;
     position: absolute;
     width: 100%;
@@ -326,7 +327,7 @@ body{
 .row{
     display: flex;
     flex-wrap: wrap;
-    margin: 41px 0 100px 120px;
+    margin: 41px 0 100px 200px;
 }
 .row ul li{
     list-style: none;
@@ -340,7 +341,7 @@ body{
 }
 footer p{
     position: relative;
-    padding: 30px 0 30px 0;
+    padding: 10px 0 10px 0;
     margin-left: 45%;
     margin-right: 10%;
     display: flex;

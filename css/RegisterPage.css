@@ -107,7 +107,7 @@ body{
     top: 12px;
     padding: 4px 250px 4px 50px;
     background: #f8f6f6;
-    border: 5px;
+    border: 1px solid #707070;
     border-radius: 8px;
     text-align: left;
 }
@@ -316,7 +316,7 @@ body{
 .row{
     display: flex;
     flex-wrap: wrap;
-    margin: 41px 0 40px 200px;
+    margin: 41px 0 100px 200px;
 }
 .row ul li{
     list-style: none;

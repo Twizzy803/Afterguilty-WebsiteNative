@@ -107,7 +107,7 @@ body{
     top: 12px;
     padding: 4px 250px 4px 50px;
     background: #EEEDED;
-    border: 5px;
+    border: 1px solid #707070;
     border-radius: 8px;
     text-align: left;
 }
