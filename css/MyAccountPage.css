@@ -81,3 +81,23 @@ body{
     top: 12px;
     height: 32px;
 }
+.navbar{
+    background-color: black;
+    position: absolute;
+    top: 11%;
+    padding: 22px 0 22px 0;
+    width: 100%;
+    font-size: 14px;
+}
+.wrapper ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.wrapper ul li{
+    padding: 0 130px 0 110px;
+}
+.menu li a{
+    color: #ffffff;
+    text-decoration: none;
+}
