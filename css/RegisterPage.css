@@ -226,7 +226,7 @@ body{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 7px;
 }
-.btn-male{
+/* .btn-male{
     position: absolute;
     top: 95%;
     left: 35%;
@@ -258,6 +258,18 @@ body{
     padding: 15px 60px 15px 60px;
     text-decoration: none;
     color: rgb(0, 0, 0);
+} */
+.gender {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 98%;
+    left: 40%;
+    font-size: 18px;
+}
+.form-check2{
+    position: relative;
+    left: 25%;
 }
 .form-check{
     position: absolute;

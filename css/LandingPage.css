@@ -304,104 +304,121 @@ body{
 }
 #box4_item{
     position: relative;
-    top: 1200px;}
+    top: 1200px;
+}
 .container{
-    font-size: 14px;
-    display: flex;
-    position: absolute;
-    width: 100%;
-    background-color: #eeeeee;
-    margin: auto;
-    top: 600%;
-    font-family: 'Roboto', sans-serif;
-}
-.list-2{
-    margin-left: 100px;
-}
-.list-3{
-    margin-left: 100px;
-}
-.list-4{
-    margin-left: 100px;
-}
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 41px 0 100px 200px;
-}
-.row ul li{
-    list-style: none;
-    padding-top: 10px;
-    
-}
-.row ul li a{
-    text-decoration: none;
-    color: #000000b2;
-    font-weight: lighter;
-}
-footer p{
-    position: relative;
-    padding: 10px 0 10px 0;
-    margin-left: 45%;
-    margin-right: 10%;
-    display: flex;
-    color: #000000b2;
-    font-weight: lighter;
-}
+        font-size: 14px;
+        display: flex;
+        position: absolute;
+        width: 100%;
+        background-color: #eeeeee;
+        margin: auto;
+        top: 600%;
+        font-family: 'Roboto', sans-serif;
+    }
+    .list-2{
+        margin-left: 100px;
+    }
+    .list-3{
+        margin-left: 100px;
+    }
+    .list-4{
+        margin-left: 100px;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 41px 0 40px 200px;
+    }
+    .row ul li{
+        list-style: none;
+        padding-top: 10px;
+        
+    }
+    .row ul li a{
+        text-decoration: none;
+        color: #000000b2;
+        font-weight: lighter;
+    }
+    footer p{
+        position: relative;
+        padding: 10px 0 10px 0;
+        margin-left: 45%;
+        margin-right: 10%;
+        display: flex;
+        color: #000000b2;
+        font-weight: lighter;
+    }
 
 /* RESPONSIVE */
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 1024px) {
     #rectangel{
         width: 130%;
+    }
+    .Tulisan2 p{
+        left: 28%;
     }
     .logo{
         width: 130%;
     }
     .logo .nama1 .nama2 p{
-        font-size: 10px;
+        font-size: 12px;
+    }
+    .nama2 p{
+        left: 12%;
+    }
+    .btn-cari{
+        left: 26%;
     }
     .katalog1 img{
-        width: 130%;
+        width: 152%;
     }.katalog1 a{
-        right: -13%;
-        top: 460px;
+        right: -32%;
+        top: 621px;
+        font-size: 28px;
+        padding: 2% 6% 2% 6%
     }
     .teks1 img{
-        width: 90%;
+        width: 110%;
+    }
+    .teks1 p{
+        left: 4%;
     }
     .teks2 p{
         margin-right: -104px;
-        left: 117%;
+        left: 137%;
     }
     #box1_item, .kotak1{
-        width: 130%;
+        width: 152%;
+    }
+    .item1{
+        left: 76.3%;
     }
     .comingsoon p{
         text-align: center;
         left: 20%;
       }
       .comingsoon img{
-          width: 122%;
-          margin-left: 41px;
+        width: 144%;
+        margin-left: 41px;
       }
       .comingsoon a{
-        top: 210.1%;
-        left: 10%;
-        padding-top: 1.3%;
-        padding-bottom: 1.3%;
+        top: 234.1%;
+        left: 12%;
+        padding: 2% 10% 2% 2%;
     }
     #box2_item, .kotak1{
-        width: 130%;
+        width: 152%;
     }
     #box3_item, .kotak1{
         width: 130%;
     }
 
-
 }
+
 @media screen and (max-width: 768px) {
     #rectangel{
-        width: 160.6%;
+        width: 100%;
         font-size: 15px;
     }
     #Daftar ul li{
@@ -414,11 +431,44 @@ footer p{
     .logo{
        width: 160.5%; 
     }
+    .nama2 p{
+        left: 12%;
+    }
+    .btn-cari{
+        left: 20%;
+    }
+    .btn-cari img{
+        left: -10px;
+        position: absolute;
+    }
+    .btn-beli{
+        position: absolute;
+        float: right;
+        top: 3px;
+        right: 46%;
+        height: 35px;
+    }
+    .btn-favor{
+        position: absolute;
+        right: 43%;
+        top: 3px;
+        height: 30px;
+    }
+    .btn-profil{
+        position: absolute;
+        right: 40%;
+        top: 3px;
+        height: 32px;
+    }
     .katalog1 img{
         width: 160.5%;
     }.katalog1 a{
-        right: -40%;
-        top: 430px;
+        right: -38%;
+        padding: 2% 6% 2% 6%;
+        top: 507px;
+    }
+    .katalog1 a:hover{
+        background: #f95d5d;
     }
     .teks1 img{
         left: 30%;
@@ -431,15 +481,16 @@ footer p{
         width: 159%;
     }
     .comingsoon p{
-      text-align: center;
-      left: 35%;
+        text-align: center;
+        left: 29%;
     }
     .comingsoon img{
         width: 150%;
         margin-left: 41px;
     }
     .comingsoon a{
-        top: 168%;
+        top: 205%;
+        padding: 2.1% 10% 2.1% 3%;
     }
     #box2_item, .kotak1{
         width: 159%;
@@ -447,6 +498,20 @@ footer p{
     #box3_item, .kotak1{
         width: 159%;
     }
-
-
+    #box4_item{
+        position: absolute;
+        width: 160%;
+        height: 410px;
+        /* background: #ffffff; */
+        top: 303%;
+        left: 0%;
+        border-radius: 15px;
+        /* box-shadow: 5px 5px 10px rgb(0 0 0 / 10%); */
+        font-family: 'Roboto', sans-serif;
 }
+.container{
+    top: 435%;
+    width: 160%;
+}
+    }
+  

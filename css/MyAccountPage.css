@@ -5,7 +5,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: #E3E3E3;
+    background: #ffffff;
     font-family: 'Roboto';
 }
 .logo{
@@ -83,11 +83,14 @@ body{
 }
 .navbar{
     background-color: black;
-    position: absolute;
+    position: relative;
     top: 11%;
     padding: 22px 0 22px 0;
     width: 100%;
     font-size: 14px;
+    position: fixed;
+    z-index: 9999;
+    margin-bottom: 10%;
 }
 .wrapper ul{
     display: flex;
@@ -95,9 +98,294 @@ body{
     flex-wrap: wrap;
 }
 .wrapper ul li{
-    padding: 0 130px 0 110px;
+    padding: 0 130px 0 100px;
 }
 .menu li a{
     color: #ffffff;
     text-decoration: none;
+}
+.menu li a:hover{
+    text-decoration: underline;
+}
+#profile{
+    position: absolute;
+    top: 5%;
+}
+
+.profile{
+    top: 28%;
+
+    margin-left: 5%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+.profile p{
+    font-weight: lighter;
+    font-size: 16px;
+}
+.kolom{
+    bottom: 10%;
+}
+.username-form{
+    display: flex;
+    position: absolute;
+    top: 45%;
+    margin-left: 13%;
+    align-items: center;
+}
+.username-form input{
+    font-size: 16px;
+    margin-left: 10%;
+    bottom: 5%;
+    padding: 7px 190px 7px 2px;
+    border-color: #000000;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.01);
+    border: 0.5px solid #A5A5A5;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+}
+.name-form{
+    display: flex;
+    position: absolute;
+    top: 55%;
+    margin-left: 13%;
+    align-items: center;
+}
+.name-form input{
+    font-size: 16px;
+    margin-left: 17.5%;
+    bottom: 5%;
+    padding: 7px 190px 7px 2px;
+    border-color: #000000;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.01);
+    border: 0.5px solid #A5A5A5;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+}
+.gender {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 65%;
+    left: 30%;
+    font-size: 18px;
+}
+.form-check2{
+    position: relative;
+    left: 25%;
+}
+.lahir{
+    display: flex;
+    position: absolute;
+    top: 73%;
+    width: 50%;
+}
+.lahir label{
+    right: 60%;
+    position: absolute;
+}
+.lahir input{
+    left: 45%;
+    position: absolute;
+}
+.foto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 65%;
+    top: 35%;
+    position: absolute;
+}
+.font-image a{
+    color: #FF3B3B;
+}
+.text-black a{
+    background: #181818;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    width: 100%;
+    padding: 5% 0 5% 0;
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    top: 110%;
+    right: -1%;
+    font-weight: lighter;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.text-black a:hover{
+    background: #767676;
+}
+#banks{
+    position: absolute;
+    top: 80%;
+}
+.banks{
+    top: 103%;
+    margin-left: 5%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+.banks p{
+    font-weight: lighter;
+    font-size: 16px;
+}
+.credit{
+    display: flex;
+    position: absolute;
+    top: 120%;
+    margin-left: 10%;
+}
+.credit h3{
+    font-weight: lighter;
+}
+.btn-add{
+    position: absolute;
+    left: 550%;
+    width: 110%;
+    padding: 7% 0 7% 0;
+    background: #181818;
+    border: 0.5px solid #A5A5A5;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    color: #FFFFFF;
+}
+.btn-add:hover{
+    background: #767676;
+}
+.kotak1{
+    top: 110%;
+    margin: 10%;
+}
+.bank{
+    display: flex;
+    position: absolute;
+    top: 185%;
+    margin-left: 10%;
+}
+.bank h3{
+    font-weight: lighter;
+}
+.btn-add1{
+    position: absolute;
+    left: 985%;
+    width: 200%;
+    padding: 14% 0 14% 0;
+    background: #181818;
+    border: 0.5px solid #A5A5A5;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    color: #FFFFFF;
+}
+.btn-add1:hover{
+    background: #767676;
+}
+.kotak1{
+    top: 110%;
+    margin: 10%;
+}
+.address{
+    top: 255%;
+    margin-left: 5%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+.address p{
+    font-weight: lighter;
+    font-size: 16px;
+}
+.alamat{
+    display: block;
+    position: absolute;
+    top: 273%;
+    margin-left: 10%;
+}
+.alamat h3{
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+}
+.keterangan{
+    background: #E4E4E4;
+    padding: 3% 5% 3% 5%;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.no-phone{
+    display: flex;
+}
+.teks{
+    margin-right: 15%;
+}
+button {
+    position: relative;
+    left: 90%;
+    width: 80px;
+    margin: 0 1%;
+    border: none;
+    color:#FF3B3B;
+    text-decoration: underline;
+    outline: none;
+  }
+  button:hover {
+    text-decoration: none;
+  }
+  button:active {
+    box-shadow: 1px 1px 3px ;
+  }
+.addss{
+    display: flex;
+}
+.teks1{
+    margin-right: 12%;
+}
+
+
+.container{
+    font-size: 14px;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    background-color: #eeeeee;
+    margin: auto;
+    top: 500%;
+    font-family: 'Roboto', sans-serif;
+}
+.list-2{
+    margin-left: 100px;
+}
+.list-3{
+    margin-left: 100px;
+}
+.list-4{
+    margin-left: 100px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 41px 0 40px 200px;
+}
+.row ul li{
+    list-style: none;
+    padding-top: 10px;
+    
+}
+.row ul li a{
+    text-decoration: none;
+    color: #000000b2;
+    font-weight: lighter;
+}
+footer p{
+    position: relative;
+    padding: 10px 0 10px 0;
+    margin-left: 45%;
+    margin-right: 10%;
+    display: flex;
+    color: #000000b2;
+    font-weight: lighter;
 }

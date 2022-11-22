@@ -29,23 +29,169 @@
     </div>
     </div>
    </div>
-
+<!-- Menu Navbar -->
    <div class="navbar">
     <nav class="wrapper">
         <ul class="menu">
-            <li class="nav-navbar1"><a href="#" class="nav-link p-0 text-muted">Profile</a></li>
-            <li class="nav-navbar2"><a href="#" class="nav-link p-0 text-muted">Banks & Cards</a></li>
+            <li class="nav-navbar1"><a href="#profile" class="nav-link p-0 text-muted">Profile</a></li>
+            <li class="nav-navbar2"><a href="#banks" class="nav-link p-0 text-muted">Banks & Cards</a></li>
             <li class="nav-navbar3"><a href="#" class="nav-link p-0 text-muted">Addresses</a></li>
             <li class="nav-navbar4"><a href="#" class="nav-link p-0 text-muted">Change Password</a></li>
         </ul>
     </nav>
    </div>
+<!-- Profile sebelah kiri -->
+<div id="profile"></div>
+   <div class="profile">
+    <h1>Profile</h1>
+    <p>Manage and protect your accunt</p>
+   </div>
+   <div class="kolom">
+    <div class="username-form">
+        <label for="username" class="form-label">Username</label> <br>
+        <input type="username" class="form-control" id="username"
+        placeholder="username">
+      </div>
+    
+      <div class="name-form">
+        <label for="name" class="form-label">Name</label> <br>
+        <input type="name" class="form-control" id="name"
+        placeholder="name">
+      </div>
 
+      <div class="gender">
+        <!-- <h3 class="mb-2 pb-1">Gender: </h3> -->
+    
+        <div class="form-check1">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="option1" checked="" autocompleted="">
+          <label class="form-check-label" for="femaleGender">Female</label>
+        </div>
+    
+        <div class="form-check2">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender" value="option2" autocompleted="">
+          <label class="form-check-label" for="maleGender">Male</label>
+        </div>
+      </div>
+        <div class="lahir">
+              <label for="tanggal" class="form-label">Date of Birth</label> <br>
+              <input type="date" value="2022-11-10" id="tanggal"
+              placeholder="tanggal">
+        </div>
+      </div>
+
+      <div class="foto">
+        <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+        <span class="font-image"><a href="">Select Image</a></span>
+        <span class="text-black"><a href="">Save Change</a></span>
+      </div>
+
+    <!-- bank dan card -->
+        <div id="banks"></div>
+          <div class="banks">
+            <h1>Banks & Cards</h1>
+            <p>Add your banks and credit cards</p>
+          </div>
+
+       <div class="credit">
+        <h3>Credit / Debit Card</h3>
+        <a href="agilgilancs77@gmail.com"
+        target="_blank">
+        <button class="btn-add">Add New Card</button></a>
+       </div>
+       <div class="box1">
+        <div class="kotak1" style="position: absolute;width: 80%;height: 300px;background: #E4E4E4;
+        box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);">
+        </div>
+
+        <div class="bank">
+          <h3>Bank Card</h3>
+          <a href="agilgilancs77@gmail.com"
+          target="_blank">
+          <button class="btn-add1">Add New Card</button></a>
+         </div>
+         <div class="box1">
+          <div class="kotak1" style="position: absolute;width: 80%;height: 300px;background: #E4E4E4;
+          box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);top: 175%;">
+          </div>
+      </div>
+
+      <!-- My Addresses -->
+      <div id="address"></div>
+      <div class="address">
+        <h1>My Addresses</h1>
+        <p>Setting your address</p>
+      </div>
+
+      <div class="alamat">
+        <h3>Adisty Pramudita</h3>
+        <div class="keterangan">
+          <section class="no-phone">
+            <p class="teks">Phone</p>
+            <p id="edit"> 08080880</p>
+            <button type="submit" id="edit-button">Edit</button>
+            <button type="submit" id="end-editing">Done</button>
+          </section>
+          <section class="addss">
+            <p class="teks1">Address</p>
+            <p id="edit1">Jl. A. Yani No. 30 RT. 01 RW. 05 Sepanjang, Taman, Sidoarjo, East Java - Indonesia</p>
+          </section>
+        </div>
+        </div>
+      </div>
+  
+
+      <!-- Footer -->
+<div class="container">
+  <footer class="py-5">
+    <div class="row">
+      <div class="list-1">
+        <h2>Help</h2> <br>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Exchange & Return</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Payment Information</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Track Yout Order</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="list-2">
+        <h2>Bussiness</h2> <br>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About Us</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pop Up Store</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Career</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">News </a></li>
+        </ul>
+      </div>
+
+      <div class="list-3">
+          <h2>Follow Us</h2> <br>
+          <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i class="ri-instagram-fill"></i>After Guilty</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i class="ri-facebook-box-fill"></i></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i class="ri-twitter-fill"></i></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i class="ri-youtube-fill"></i></a></li>
+            </ul>
+      </div>
+
+      <div class="list-4">
+          <h2>Download Mobile App</h2> <br>
+          <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="gambar\Appstore.png" alt="AppStore"></a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="gambar\Goolgleplay.png" alt="PlayStore"></a></li>
+            </ul>
+      </div> 
+    </div> <hr style="margin-left:10%; margin-right:-10%;">
+    <p class="text-center text-muted">©2022 AfterGuilty Store. All Right Reserved</p>
+  </footer>
+
+   
 
    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
    <script>
        AOS.init();
    </script>
    <script>src="js\LandingPage.js"</script>
+   <script src="js\MyAccountPage.js"></script>
  </body>
 </html>
