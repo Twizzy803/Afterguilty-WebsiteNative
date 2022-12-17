@@ -1,3 +1,7 @@
+<?php 
+include "db.php";
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,8 +38,8 @@
                             <option value="english">English</option>
                         </select>
                     </li> -->
-                    <li><a href="#registers">Register</a>|</li>
-                    <li><a href="#logins">Login</a></li>
+                    <li><a href="RegisterPage.php">Register</a>|</li>
+                    <li><a href="LoginPage.php">Login</a></li>
                 </ul>
             </nav>
             <div class="menu">
