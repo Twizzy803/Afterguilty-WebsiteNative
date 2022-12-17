@@ -1,12 +1,12 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    font-family: 'Roboto';
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: "Roboto";
 }
 /* #rectangel{
     display: flex;
@@ -134,105 +134,106 @@ body{
     top: 12px;
     height: 32px;
 } */
-.toko{
+.toko {
     display: flex;
-    position: absolute;
-    top: 20%;
-
-}
-.toko h1{
-    font-family: 'Poiret One', cursive;
-    font-weight: lighter;
-    margin-left: 455px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 65px;
-    line-height: 76px;
-    color: #000000;
-}
-.toko p{
-    font-family: 'roboto' , sans-serif;
-    position: absolute;
-    top: 100%;
-    margin-left: 409px;
-    margin-right: -69px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 40px;
-    text-align: center;
-    letter-spacing: -0.01em;
-    text-transform: capitalize;
-    color: #000000;
-}
-.email-form{
-    position: absolute;
-    top: 50%;
-    margin-left: 33%;
-}
-.email-form input{
-    font-size: 16px;
-    padding: 7px 190px 7px 2px;
-    border-color: #000000;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.01);
-    border: 0.5px solid #A5A5A5;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
-}
-.password-form{
-    position: absolute;
-    top: 63%;
-    margin-left: 33%;
-}
-.password-form input{
-    font-size: 16px;
-    padding: 7px 190px 7px 2px;
-    border-color: #000000;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.01);
-    border: 0.5px solid #A5A5A5;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
-}
-.form-check{
-    position: absolute;
-    top: 75%;
-    left: 33%;
-    color: #4E4E4E;
-}
-.form-check p{
-    width: 70%;
-    text-align: center;
-    color: #4E4E4E;
-}
-.btn-join{
-    position: absolute;
-    top: 78%;
-    left: 33.3%;
-    width: 100%;
-    box-sizing: border-box;
-    background: #181818;
-    border: 0.5px solid #A5A5A5;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
-}
-.sign-in{
-    display: block;
-    position: absolute;
-    top: 87%;
-    left: 41%;
-}
-.sign-in a{
-    color: rgb(255, 0, 0);
-    text-decoration: none;
-    margin-left: 5px;
-}
-.sign-in a:hover{
-    text-decoration: underline;
-}
-.container{
-    top: 55vw;
+    top: 10vw;
     position: relative;
-    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.toko h1 {
+  font-family: "Poiret One", cursive;
+  font-weight: lighter;
+  margin-left: 455px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 76px;
+  color: #000000;
+}
+.toko p {
+  font-family: "roboto", sans-serif;
+  position: absolute;
+  top: 100%;
+  margin-left: 409px;
+  margin-right: -69px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: -0.01em;
+  text-transform: capitalize;
+  color: #000000;
+}
+.email-form {
+    position: absolute;
+    top: 170%;
+    margin-left: 33%;
+}
+.email-form input {
+  font-size: 16px;
+  padding: 7px 210px 7px 2px;
+  border-color: #000000;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.01);
+  border: 0.5px solid #a5a5a5;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+}
+.password-form {
+    position: absolute;
+    top: 262%;
+    margin-left: 33%;
+}
+.password-form input {
+  font-size: 16px;
+  padding: 7px 210px 7px 2px;
+  border-color: #000000;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.01);
+  border: 0.5px solid #a5a5a5;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+}
+.form-check {
+  position: absolute;
+  top: 75%;
+  left: 33%;
+  color: #4e4e4e;
+}
+.form-check p {
+  width: 70%;
+  text-align: center;
+  color: #4e4e4e;
+}
+.btn-join {
+  position: absolute;
+  top: 78%;
+  left: 33.3%;
+  width: 100%;
+  box-sizing: border-box;
+  background: #181818;
+  border: 0.5px solid #a5a5a5;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+}
+.sign-in {
+  display: block;
+  position: absolute;
+  top: 87%;
+  left: 41%;
+}
+.sign-in a {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+  margin-left: 5px;
+}
+.sign-in a:hover {
+  text-decoration: underline;
+}
+.container {
+  top: 55vw;
+  position: relative;
+  display: flex;
 }

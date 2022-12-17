@@ -1,31 +1,30 @@
 <?php
-include "inclaude\header.php";
+// include "inclaude\header.php";
 include "inclaude\db.php";
-// $email = "";
-// $password = "";
-// $err = "";
+$email = "";
+$password = "";
+$err = "";
 
-//   if(isset($_POST['login'])) {
-//     $email      =$_POST['email'];
-//     $password   =$_POST['password'];
-//       if ($email == '' or $password == '') {
-//         $err .= "<li>Silahkan masukan email dan password</li>";
-//       }
-//       if(empty($err)) {
-//         $sql1 ="SELECT * FROM `user_login` WHERE email = '$email'";
-//         $q1 = mysqli_query($connection,$sql1);
-//         $r1 = mysqli_fetch_array($q1);
-//         if ($r1['password'] != ($password)) {
-//           $err = "<li>Akun tidak ditemukan</li>";
-//         }
-//       }
-//       if(empty($err)) {
-//         $_SESSION['admin_email'] = $email;
-//         header("location:admin_user.php");
-//         exit();
-//       }
-
-//   }
+if (isset($_POST['login'])) {
+  $email      = $_POST['email'];
+  $password   = $_POST['password'];
+  if ($email == '' or $password == '') {
+    $err .= "<li>Silahkan masukan email dan password</li>";
+  }
+  if (empty($err)) {
+    $sql1 = "SELECT * FROM user_login WHERE email = '$email'";
+    $q1 = mysqli_query($connection, $sql1);
+    $r1 = mysqli_fetch_array($q1);
+    if ($r1['password'] != md5($password)) {
+      $err .= "<li>Akun tidak ditemukan</li>";
+    }
+  }
+  if (empty($err)) {
+    $_SESSION['admin_email'] = $email;
+    header("location:../admin_user.php");
+    exit();
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,31 +63,27 @@ include "inclaude\db.php";
   <div class="toko">
     <h1>After Guilty</h1>
     <p>Your Account For Everything AfterGuilty</p>
+    <!-- Kolom register -->
+    <?php
+    if ($err) {
+      echo "<ul>$err</ul>";
+    }
+    ?>
+    <form action="" method="post">
+      <div class="email-form">
+        <label for="email" class="form-label">Email</label> <br>
+        <input type="email" value="<?php echo $email ?>" class="form-control" id="email" placeholder="name@example.com">
+      </div>
+
+      <div class="password-form">
+        <label for="password" class="form-label">Password</label> <br>
+        <input type="password" class="form-control" id="password" placeholder="********">
+      </div>
+
+      <button name="masuk" type="submit" class="btn-join" style="color: #fff;width: 30.5%;height: 40px;top: 373%;">MASUK</button>
+    </form>
   </div>
-  <!-- Kolom register -->
-  <?php if (isset($_GET['gagal'])) : ?>
-    <button type="button" class="btn btn-danger mb-2" style="width: 100%">Email atau Password Anda Salah</button>
-  <?php endif; ?>
-
-  <?php if (isset($_GET['terdaftar'])) : ?>
-    <button type="button" class="btn btn-success mb-2" style="width: 100%">Pendaftaran Berhasil Silahkan Masuk</button>
-  <?php endif; ?>
-
-  <form action="inclaude\ceklogin.php" method="POST">
-    <div class="email-form">
-      <label for="email" class="form-label">Email</label> <br>
-      <input type="email" class="form-control" id="email" placeholder="name@example.com">
-    </div>
-
-    <div class="password-form">
-      <label for="password" class="form-label">Password</label> <br>
-      <input type="password" class="form-control" id="password" placeholder="********">
-    </div>
-
-    <button name="masuk" type="submit" class="btn-join" style="color: #fff; width: 30%;">MASUK</button>
-    <p class="sign-in">Belum memiliki akun?<a href="RegisterPage.php">Daftar</a></p>
-  </form>
-
+  <p class="sign-in">Belum memiliki akun?<a href="RegisterPage.php">Daftar</a></p>
 
   <!-- Footer -->
   <div class="container">
