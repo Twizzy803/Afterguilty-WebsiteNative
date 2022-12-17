@@ -1,3 +1,7 @@
+<?php 
+include "inclaude\db.php";
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
