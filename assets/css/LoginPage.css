@@ -134,14 +134,14 @@ body {
     top: 12px;
     height: 32px;
 } */
-.toko {
+#toko {
     display: flex;
     top: 10vw;
     position: relative;
     flex-direction: column;
     flex-wrap: nowrap;
 }
-.toko h1 {
+#toko h1 {
   font-family: "Poiret One", cursive;
   font-weight: lighter;
   margin-left: 455px;
@@ -151,7 +151,7 @@ body {
   line-height: 76px;
   color: #000000;
 }
-.toko p {
+#toko p {
   font-family: "roboto", sans-serif;
   position: absolute;
   top: 100%;

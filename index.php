@@ -38,8 +38,8 @@ include "inclaude\db.php";
                             <option value="english">English</option>
                         </select>
                     </li> -->
-                    <li><a href="RegisterPage.php">Register</a>|</li>
-                    <li><a href="LoginPage.php">Login</a></li>
+                    <li><a href="daftar.php">Register</a>|</li>
+                    <li><a href="login.php">Login</a></li>
                 </ul>
             </nav>
             <div class="menu">

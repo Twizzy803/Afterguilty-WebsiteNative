@@ -1,3 +1,14 @@
+<?php 
+include "../includes/db.php";
+ob_start();
+session_start();
+if(isset($_SESSION['role'])){
+    if($_SESSION['role'] !== 'admin'){
+        header("Location: ../index.php?dilarang");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,17 +21,21 @@
 </head>
 
 <body>
-    <nav class="navbar bg-light shadow-sm bg-body rounded" style="position: fixed;z-index: 9999;width: 100%;">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" style="display: flex;font-size:2.5vw;font-family:'Poiret One', sans-serif; align-items: baseline;">After Guilty
-                <p style="font-size: 2vw;font-family: 'Inter', sans-serif; font-weight: bold;">.Store</p>
-            </a>
-            <form class="d-flex" role="search">
+            <a class="navbar-brand" href="#">After Guilty<p>ADMIN</p></a>
+            <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-dark" type="submit">Search</button>
             </form>
+
+            <div class="icon">
+                <i class="ri-logout-box-r-line" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Keluar"></i>
+            </div>
         </div>
     </nav>
+
+
 
 </body>
 

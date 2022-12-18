@@ -1,31 +1,31 @@
 <?php
 // include "inclaude\header.php";
-include "inclaude\db.php";
-$email = "";
-$password = "";
-$err = "";
+include 'function.php';
+// $email = "";
+// $password = "";
+// $err = "";
 
-if (isset($_POST['login'])) {
-  $email      = $_POST['email'];
-  $password   = $_POST['password'];
-  if ($email == '' or $password == '') {
-    $err .= "<li>Silahkan masukan email dan password</li>";
-  }
-  if (empty($err)) {
-    $sql1 = "SELECT * FROM user_login WHERE email = '$email'";
-    $q1 = mysqli_query($connection, $sql1);
-    $r1 = mysqli_fetch_array($q1);
-    if ($r1['password'] != md5($password)) {
-      $err .= "<li>Akun tidak ditemukan</li>";
-    }
-  }
-  if (empty($err)) {
-    $_SESSION['admin_email'] = $email;
-    header("location:../admin_user.php");
-    exit();
-  }
-}
-?>
+// if (isset($_POST['login'])) {
+//   $email      = $_POST['email'];
+//   $password   = $_POST['password'];
+//   if ($email == '' or $password == '') {
+//     $err .= "<li>Silahkan masukan email dan password</li>";
+//   }
+//   if (empty($err)) {
+//     $sql1 = "SELECT * FROM user_login WHERE email = '$email'";
+//     $q1 = mysqli_query($connection, $sql1);
+//     $r1 = mysqli_fetch_array($q1);
+//     if ($r1['password'] != md5($password)) {
+//       $err .= "<li>Akun tidak ditemukan</li>";
+//     }
+//   }
+//   if (empty($err)) {
+//     $_SESSION['admin_email'] = $email;
+//     header("location:../admin_user.php");
+//     exit();
+//   }
+// }
+// ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,24 +60,19 @@ if (isset($_POST['login'])) {
     </nav>
   </header> -->
 
-  <div class="toko">
+  <div id="toko">
     <h1>After Guilty</h1>
     <p>Your Account For Everything AfterGuilty</p>
     <!-- Kolom register -->
-    <?php
-    if ($err) {
-      echo "<ul>$err</ul>";
-    }
-    ?>
     <form action="" method="post">
       <div class="email-form">
         <label for="email" class="form-label">Email</label> <br>
-        <input type="email" value="<?php echo $email ?>" class="form-control" id="email" placeholder="name@example.com">
+        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
       </div>
 
       <div class="password-form">
         <label for="password" class="form-label">Password</label> <br>
-        <input type="password" class="form-control" id="password" placeholder="********">
+        <input type="password" name="password" class="form-control" id="password" placeholder="********">
       </div>
 
       <button name="masuk" type="submit" class="btn-join" style="color: #fff;width: 30.5%;height: 40px;top: 373%;">MASUK</button>

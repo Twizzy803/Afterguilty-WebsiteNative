@@ -3,17 +3,17 @@
 include "db.php";
 session_start();
 if(isset($_POST['daftar'])){
-    $namaLengkap = $_POST['namaLengkap'];
+    $nama = $_POST['nama'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = $_POST['pass'];
     $alamat = $_POST['alamat'];
 
-    $query_users = "INSERT INTO `users`(`id_users`, `nama_lengkap`, `alamat`) VALUES ('','$namaLengkap','$alamat')";
+    $query_users = "INSERT INTO `users`(`id_users`, `nama_lengkap`, `alamat`) VALUES ('','$nama','$alamat')";
     $insert_users = mysqli_query($connection, $query_users);
     if(!$insert_users){
         die('Query Failed' . mysqli_error($connection));
     } else {
-        $justGetUsers = "SELECT * FROM `users` WHERE `nama_lengkap` = '$namaLengkap'";
+        $justGetUsers = "SELECT * FROM `users` WHERE `nama_lengkap` = '$nama'";
         $getUsersbyName = mysqli_query($connection, $justGetUsers);
         while($row = mysqli_fetch_assoc($getUsersbyName)){
             $id_users = $row['id_users'];
@@ -23,7 +23,7 @@ if(isset($_POST['daftar'])){
         if(!$insert_login){
             die('Query Failed ' . mysqli_error($connection));
         } else {
-            header('Location: ../LoginPage.php?terdaftar');
+            header('Location: ../login.php?terdaftar');
         }
     }
 }
