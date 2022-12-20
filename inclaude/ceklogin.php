@@ -5,9 +5,9 @@ session_start();
 
 if(isset($_POST['masuk'])){
     $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    $pass = $_POST['password'];
 
-    $query = "SELECT * FROM `users_login` WHERE 'email' = '$email' AND 'password' = '$pass'";
+    $query = "SELECT * FROM `users_login` WHERE `email` = '$email' AND `password` = '$pass'";
     $select_login = mysqli_query($connection, $query);
     
     if(!$select_login){

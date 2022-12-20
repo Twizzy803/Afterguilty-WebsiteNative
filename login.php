@@ -1,11 +1,10 @@
 <?php
-include "inclaude\header.php";
 include "inclaude\db.php";
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +23,7 @@ include "inclaude\db.php";
 </head>
 
 <body>
-    <div id="toko">
+    <div id="toko" style="margin-top: 5%;">
         <h1 align="center" style="font-family:'Poiret One', cursive;font-weight: lighter;font-size:5vw;">After Guilty</h1>
         <p align="center" style=" font-family: 'roboto', sans-serif;">Your Account For Everything AfterGuilty</p>
         <?php if (isset($_GET['gagal'])) : ?>
@@ -40,10 +39,10 @@ include "inclaude\db.php";
             </div>
             <div class="mb-3" style="width: 30%;margin-left:35%;">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" name="pass" class="form-control" id="password" placeholder="********">
+                <input type="password" name="password" class="form-control" id="password" placeholder="********">
             </div>
             <button name="masuk" type="submit" class="btn btn-primary" style="margin-left: 40%;width: 20%; background: #181818;margin-bottom: 5px;">MASUK</button>
-            <p class="sign-in" align="center">Belum memiliki akun?<a href="daftar.php">Daftar</a></p>
+            <p class="sign-in" align="center" style="margin-bottom: 7%;">Belum memiliki akun?<a href="daftar.php">Daftar</a></p>
         </form>
     </div>
 
@@ -60,7 +59,7 @@ include "inclaude\db.php";
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <a href="" style="color: #181818;"><i class="bi bi-instagram" style="margin-right: 10px;"></i></a>
+                <a href="https://www.instagram.com/afterguilty.store/" style="color: #181818;"><i class="bi bi-instagram" style="margin-right: 10px;"></i></a>
                 <a href="" style="color: #181818;"><i class="bi bi-facebook" style="margin-right: 10px;"></i></a>
                 <a href="" style="color: #181818;"><i class="bi bi-twitter" style="margin-right: 10px;"></i></a>
             </ul>

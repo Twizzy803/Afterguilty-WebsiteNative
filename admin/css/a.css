@@ -1,0 +1,353 @@
+/* dasar */
+.basis {
+  padding-bottom: 20px;
+  height: 1200px;
+}
+
+/* container samping */
+.base {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+
+  background: #00b2ff;
+}
+
+/* Admin */
+.txt_admin {
+  position: absolute;
+  width: 107px;
+  height: 36px;
+  left: 23px;
+  top: -21px;
+
+  font-family: "Zen Dots", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+
+  color: #000000;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Base */
+.txt_base {
+  position: absolute;
+  width: 99px;
+  height: 36px;
+  left: 99px;
+  top: 13px;
+
+  font-family: "Zen Dots";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+
+  color: #000000;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* tombol menu input */
+.btn_input {
+  position: absolute;
+  width: 216px;
+  height: 80px;
+  left: 477px;
+  top: 0px;
+
+  background: #ffffff;
+}
+
+/* tombol menu user */
+.btn_user {
+  position: absolute;
+  width: 216px;
+  height: 80px;
+  left: 693px;
+  top: 0;
+
+  background: #00b2ff;
+}
+
+/* txt_input */
+.txt_input {
+  text-decoration: none;
+  position: absolute;
+  width: 92px;
+  height: 36px;
+  left: 62px;
+  top: 22px;
+
+  font-family: "Zen Dots";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+
+  /* identical to box height */
+
+  color: #00b2ff;
+
+  text-shadow: 0px 4px 4px rgba(0, 178, 255, 0.58);
+}
+
+/* txt_user */
+.txt_user {
+  text-decoration: none;
+  position: absolute;
+  width: 95px;
+  height: 36px;
+  left: 63px;
+  top: 22px;
+
+  font-family: "Zen Dots";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+
+  /* identical to box height */
+
+  color: #ffffff;
+}
+
+/* container */
+.container {
+  position: absolute;
+  width: 999px;
+  height: 377px;
+  left: 180px;
+  top: 140px;
+
+  background: #ffffff;
+  opacity: 0.5;
+  border: 2px solid #a7a7a7;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+/* Label Merek */
+.merek {
+  position: absolute;
+  width: 39px;
+  height: 25px;
+  left: 55px;
+  top: 67px;
+
+  font-family: "Catamaran", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+
+  /* identical to box height */
+
+  color: #000000;
+}
+
+/* Label Harga */
+.harga {
+  position: absolute;
+  width: 38px;
+  height: 25px;
+  left: 55px;
+  top: 125px;
+
+  font-family: "Catamaran", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+
+  /* identical to box height */
+
+  color: #000000;
+}
+
+/* Label Deskripsi */
+.deskripsi {
+  position: absolute;
+  width: 57px;
+  height: 25px;
+  left: 55px;
+  top: 180px;
+
+  font-family: "Catamaran", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+
+  /* identical to box height */
+
+  color: #000000;
+}
+
+/* Label Gambar */
+.gambar {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  left: 55px;
+  top: 285px;
+
+  font-family: "Catamaran", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+
+  /* identical to box height */
+
+  color: #000000;
+}
+
+/* Kolom input merek */
+.kolom_input_merek {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 700px;
+  height: 45px;
+  left: 215px;
+  top: 55px;
+
+  background: #ffffff;
+  border: 2px solid #d9d9d9;
+  border-radius: 4px;
+}
+
+/* Kolom input harga */
+.kolom_input_harga {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 700px;
+  height: 45px;
+  left: 215px;
+  top: 113px;
+
+  background: #ffffff;
+  border: 2px solid #d9d9d9;
+  border-radius: 4px;
+}
+
+/* Kolom input dekripsi */
+.kolom_input_deskripsi {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 700px;
+  height: 100px;
+  left: 215px;
+  top: 168px;
+
+  background: #ffffff;
+  border: 2px solid #d9d9d9;
+  border-radius: 4px;
+}
+
+/* Kolom input gambar */
+.kolom_input_gambar {
+  position: absolute;
+  width: 700px;
+  height: 45px;
+  left: 215px;
+  top: 285px;
+}
+
+.btn {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 141px;
+  height: 45px;
+  left: 775px;
+  top: 290px;
+
+  background: #0047ff;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+
+  /* identical to box height */
+
+  color: #ffffff;
+}
+/* Div tempat data */
+.div_data {
+  position: absolute;
+  width: 999px;
+  height: 290px;
+  left: 180px;
+  top: 620px;
+  margin-bottom: 50px;
+
+  background: #ffffff;
+  opacity: 0.5;
+  border: 2px solid #a7a7a7;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.header {
+  position: absolute;
+  width: 1000px;
+  height: 91px;
+  left: 0px;
+  top: 0px;
+
+  background: #00b2ff;
+  border-radius: 4px 4px 0px 0px;
+}
+.data {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 49px;
+
+  color: #ffffff;
+}
+
+/* tabel */
+.table {
+  position: absolute;
+  top: 120px;
+  left: 30px;
+}
+/* tabel row */
+.tr {
+  font-weight: bold;
+  font-family: "Martian Mono", monospace;
+  color: #000000;
+}
+.thHarga {
+  position: absolute;
+
+  left: 220px;
+}
+.thDeskripsi {
+  position: absolute;
+
+  left: 480px;
+}
+.thGambar {
+  position: absolute;
+
+  left: 790px;
+}

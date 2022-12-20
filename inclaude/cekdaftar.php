@@ -5,7 +5,7 @@ session_start();
 if(isset($_POST['daftar'])){
     $nama = $_POST['nama'];
     $email = $_POST['email'];
-    $password = $_POST['pass'];
+    $password = $_POST['password'];
     $alamat = $_POST['alamat'];
 
     $query_users = "INSERT INTO `users`(`id_users`, `nama_lengkap`, `alamat`) VALUES ('','$nama','$alamat')";

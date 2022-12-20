@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(237, 237, 237);
+    font-family: "Robotoxx";
+}
+.nav-item a:hover{
+    color: #fff;
+}

@@ -1,11 +1,15 @@
+<?php 
+include "inclaude\header.php";
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css\style_user.css">
+  <link rel="stylesheet" href="css\style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,27 +22,11 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">After Guilty<p>ADMIN</p></a>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Search</button>
-      </form>
-
-      <div class="icon">
-        <i class="ri-mail-fill" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Surat Masuk"></i>
-        <i class="ri-notification-fill" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Notifikasi"></i>
-        <i class="ri-logout-box-r-line" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Keluar"></i>
-      </div>
-    </div>
-  </nav>
-
   <div class="menu no-gutters">
     <div class="col-md-2 bg-dark pr-3 pt-4">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="admin_user.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
+          <a class="nav-link active text-white" aria-current="page" href="index.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
           <hr class="bg-secondary">
         </li>
         <li class="nav-item">
@@ -53,24 +41,25 @@
     </div>
 
     <div class="col-md-10 p-5 pt-3">
-     <h3><i class="ri-file-list-2-fill mr-2"></i>BARANG</h3>
-      <hr> 
+      <h3><i class="ri-file-list-2-fill mr-2"></i>BARANG</h3>
+      <hr>
       <a class="btn btn-primary" href="tambah_barang.php" role="button">Tambah Barang</a>
       <br>
 
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">No</th>
             <th scope="col">Nama</th>
+            <th scope="col">Deskripsi</th>
             <th scope="col">Ukuran</th>
             <th scope="col">Harga</th>
             <th scope="col">Stock</th>
+            <th scope="col">Gambar</th>
             <th scope="col">Pilih</th>
           </tr>
         </thead>
         <tbody>
-          
+
           <?php
           $servername = "localhost";
           $username = "root";
@@ -85,14 +74,14 @@
           //   echo "Server not Connected";
           // }
 
-          $sql  ="SELECT * FROM barang";
+          $sql  = "SELECT * FROM barang";
           $result = $connection->query($sql);
 
           if (!$result) {
             die("invalid query: " . $connection->error);
           }
 
-          while($row = $result->fetch_assoc()){
+          while ($row = $result->fetch_assoc()) {
             echo "
             <tr>
             <td>$row[id]</td>
@@ -110,7 +99,7 @@
           ?>
 
 
-          
+
 
         </tbody>
       </table>

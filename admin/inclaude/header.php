@@ -1,5 +1,5 @@
 <?php 
-include "../includes/db.php";
+include "../inclaude/db.php";
 ob_start();
 session_start();
 if(isset($_SESSION['role'])){
@@ -10,7 +10,7 @@ if(isset($_SESSION['role'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -30,10 +30,10 @@ if(isset($_SESSION['role'])){
             </form>
 
             <div class="icon">
-                <i class="ri-logout-box-r-line" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Keluar"></i>
+                <a href="../index.php" style="text-decoration: none; color:#000;"><i class="ri-logout-box-r-line" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Keluar"></i></a>
             </div>
         </div>
-    </nav>
+    </nav><br><br><br>
 
 
 

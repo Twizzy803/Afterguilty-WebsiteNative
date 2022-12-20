@@ -1,4 +1,7 @@
 <?php
+
+include "inclaude\header.php";
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -49,13 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css\style_user.css">
+  <link rel="stylesheet" href="css\style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,27 +71,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">After Guilty<p>ADMIN</p></a>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Search</button>
-      </form>
-
-      <div class="icon">
-        <i class="ri-mail-fill" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Surat Masuk"></i>
-        <i class="ri-notification-fill" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Notifikasi"></i>
-        <i class="ri-logout-box-r-line" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Keluar"></i>
-      </div>
-    </div>
-  </nav>
-
   <div class="menu_tambah no-gutters">
     <div class="col-md-2 bg-dark pr-3 pt-4">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="admin_user.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
+          <a class="nav-link active text-white" aria-current="page" href="index.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
           <hr class="bg-secondary">
         </li>
         <li class="nav-item">
