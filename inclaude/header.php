@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -18,7 +19,7 @@
             </a>
             <?php if (isset($_SESSION['email'])) : ?>
                 <li class="nav-item">
-                    <a class="btn btn-outline-primary" href="includes/logout.php">
+                    <a class="btn text-dark fw-bold" href="inclaude\logout.php">
                         Keluar
                     </a>
                 </li>

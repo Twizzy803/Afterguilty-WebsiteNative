@@ -9,56 +9,47 @@ $database = "afterguilty";
 
 $connection = new mysqli($servername, $username, $password, $database);
 
-$id        = "";
-$nama      = "";
-$deskripsi = "";
-$ukuran    = "";
-$harga     = "";
-$stock     = "";
-$gambar    = "";
+$id_users        = "";
+$nama_lengkap    = "";
+$alamat          = "";
+$level           = "";
 
-$errorMessage = "";
+$errorMessage   = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-  if (!isset($_GET["id"])) {
-    header("location: barang.php");
+  if (!isset($_GET["id_users"])) {
+    header("location: user.php");
     exit;
   }
 
-  $id = $_GET["id"];
+  $id_users = $_GET["id_users"];
 
-  $sql = "SELECT * FROM barang WHERE id=$id";
+  $sql = "SELECT * FROM users JOIN users_login WHERE users.id_users=$id_users AND users_login.id_users=$id_users";
   $result = $connection->query($sql);
   $row = $result->fetch_assoc();
 
   if (!$row) {
-    header("location: barang.php");
+    header("location: user.php");
     exit;
   }
   
-  $nama = $row["nama"];
-  $deskripsi = $row["deskripsi"];
-  $ukuran = $row["ukuran"];
-  $harga = $row["harga"];
-  $stock = $row["stock"];
-  $gambar = $row["gambar"];
+  $nama_lengkap = $row["nama_lengkap"];
+  $alamat = $row["alamat"];
+  $role = $row["role"];
 } else {
-  $id = $_POST["id"];
-  $nama = $_POST["nama"];
-  $deskripsi = $_POST["deskripsi"];
-  $ukuran = $_POST["ukuran"];
-  $harga = $_POST["harga"];
-  $stock = $_POST["stock"];
-  $gambar = $_POST["gambar"];
+  $id_users = $_POST["id_users"];
+  $nama_lengkap = $_POST["nama_lengkap"];
+  $alamat = $_POST["alamat"];
+  $role = $_POST["role"];
 
   do {
-    if (empty($id) || empty($nama) || empty($deskripsi) || empty($ukuran) || empty($harga) || empty($stock) || empty($gambar)) {
+    if (empty($id_users) || empty($nama_lengkap) || empty($alamat) || empty($role)) {
       $errorMessage = "Tolong Diisi Semua";
       break;
     }
-    $sql = "UPDATE barang SET nama='$nama', deskripsi='$deskripsi', ukuran='$ukuran', harga = '$harga', stock = '$stock', gambar='$gambar' WHERE id = $id";
+    $sql = "UPDATE users JOIN users_login SET users.nama_lengkap = '$nama_lengkap', users.alamat = '$alamat', .users_login.role = '$role'  WHERE users.id_users = $id_users AND users_login.id_users=$id_users";
     $result = $connection->query($sql);
 
     if (!$result) {
@@ -67,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 
     $successMessage = "Telah Diperbarui";
-    header("location: barang.php");
+    header("location: user.php");
     exit;
   } while (false);
 }
@@ -112,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     </div>
 
     <div class="col-md-10 p-5 pt-3">
-      <h3><i class="ri-file-list-2-fill mr-2"></i>EDIT BARANG</h3>
+      <h3><i class="ri-user-fill mr-2"></i>EDIT</h3>
       <hr>
 
       <?php
@@ -127,51 +118,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       ?>
 
       <form method="post">
-        <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <input type="hidden" name="id_users" value="<?php echo $id_users; ?>">
         <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Nama</label>
+          <label class="col-sm-3 col-form-label">Nama Lengkap</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" name="nama" value="<?php echo $nama; ?>">
+            <input type="text" class="form-control" name="nama_lengkap" value="<?php echo $nama_lengkap; ?>">
           </div>
         </div>
 
         <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Deskripsi</label>
+          <label class="col-sm-3 col-form-label">Alamat</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" name="deskripsi" value="<?php echo $deskripsi; ?>">
+            <input type="text" class="form-control" name="alamat" value="<?php echo $alamat; ?>">
           </div>
         </div>
 
         <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Ukuran</label>
+          <label class="col-sm-3 col-form-label">Level</label>
           <div class="col-sm-6">
-            <select name="ukuran" id="ukuran" class="form-control" required>
-              <?php $ukuran = $afterguilty['ukuran']; ?>
-              <option value="M" <?= $ukuran == 'M' ? 'selected' : null ?>>M</option>
-              <option value="L" <?= $ukuran == 'L' ? 'selected' : null ?>>L</option>
-              <option value="XL" <?= $ukuran == 'XL' ? 'selected' : null ?>>XL</option>
+            <select name="role" id="role" class="form-control" required>
+              <option value="">Pilih</option>
+              <?php $role = $afterguilty['role']; ?>
+              <option value="admin" <?= $role == 'admin' ? 'selected' : null ?>>Admin</option>
+              <option value="kustomer" <?= $role == 'kustomer' ? 'selected' : null ?>>Kustomer</option>
             </select>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Harga</label>
-          <div class="col-sm-6">
-            <input type="number" class="form-control" name="harga" value="<?php echo $harga; ?>">
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Stock</label>
-          <div class="col-sm-6">
-            <input type="number" class="form-control" name="stock" value="<?php echo $stock; ?>">
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <label class="col-sm-3 col-form-label">Gambar</label>
-          <div class="col-sm-6">
-            <input type="file" class="form-control" name="gambar" value="<?php echo $gambar; ?>">
           </div>
         </div>
 
@@ -192,16 +162,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         <div class="row mb-3">
           <div class="offset-sm-3 col-sm-3 d-grid">
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-primary" name="proses">Simpan</button>
           </div>
           <div class="offset-sm col-sm-3 d-grid">
-            <a class="btn btn-outline-primary" href="barang.php" role="button">Batal</a>
+            <a class="btn btn-outline-primary" href="user.php" role="button">Batal</a>
           </div>
         </div>
-
       </form>
-
-
     </div>
   </div>
 

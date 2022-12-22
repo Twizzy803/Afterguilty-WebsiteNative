@@ -34,7 +34,7 @@ include "inclaude\header.php";
           <hr class="bg-secondary">
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="total_penjualan.php"><i class="ri-line-chart-line"></i></i> Total Penjualan</a>
+          <a class="nav-link text-white" href="user.php"><i class="ri-user-fill"></i> User</a>
           <hr class="bg-secondary">
         </li>
       </ul>
@@ -49,6 +49,7 @@ include "inclaude\header.php";
       <table class="table table-striped">
         <thead>
           <tr>
+            <th scope="col">No</th>
             <th scope="col">Nama</th>
             <th scope="col">Deskripsi</th>
             <th scope="col">Ukuran</th>
@@ -73,7 +74,7 @@ include "inclaude\header.php";
           // } else {
           //   echo "Server not Connected";
           // }
-
+          $no=1;
           $sql  = "SELECT * FROM barang";
           $result = $connection->query($sql);
 
@@ -84,17 +85,20 @@ include "inclaude\header.php";
           while ($row = $result->fetch_assoc()) {
             echo "
             <tr>
-            <td>$row[id]</td>
+            <td>$no</td>
             <td>$row[nama]</td>
+            <td>$row[deskripsi]</td>
             <td>$row[ukuran]</td>
-            <td>$row[harga]</td>
+            <td>Rp.$row[harga]</td>
             <td>$row[stock]</td>
+            <td>$row[gambar]</td>
             <td>
               <a class='btn btn-primary btn-sm' href='edit.php?id=$row[id]'>Edit</a>
               <a class='btn btn-danger btn-sm' href='hapus.php?id=$row[id]'>Hapus</a>
             </td>
           </tr>
             ";
+            $no++;
           }
           ?>
 

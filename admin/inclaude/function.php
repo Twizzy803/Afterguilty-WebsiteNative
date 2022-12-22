@@ -13,4 +13,9 @@ function getTotalStock(){
     $totalStock = mysqli_fetch_assoc($stock);
     echo '<h5 class="card-title text-center">'.$totalStock['totalStock'].'</h5>';
 }
+
+
+function check_admin(){
+    
+}
 ?>

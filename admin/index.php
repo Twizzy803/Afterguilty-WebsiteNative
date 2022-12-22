@@ -23,7 +23,6 @@ include "inclaude\header.php";
 
 <body>
   <div class="menu no-gutters">
-  <style display: none;><?php echo $_SESSION['email'] ?></style> 
     <div class="col-md-2 bg-dark pr-3 pt-4">
       <ul class="nav flex-column">
         <li class="nav-item">
@@ -35,13 +34,14 @@ include "inclaude\header.php";
           <hr class="bg-secondary">
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="total_penjualan.php"><i class="ri-line-chart-line"></i></i> Total Penjualan</a>
+          <a class="nav-link text-white" href="user.php"><i class="ri-user-fill"></i> User</a>
           <hr class="bg-secondary">
         </li>
       </ul>
     </div>
-
+    
     <div class="col-md-10 p-5 pt-3">
+      Selamat Datang <?php echo $_SESSION['email'] ?>
       <h3><i class="ri-dashboard-2-fill mr-2"></i>DASHBOARD</h3>
       <hr>
 
@@ -62,9 +62,9 @@ include "inclaude\header.php";
         <div class="card2" style="width: 18rem;">
           <div class="card-body">
             <div class="card2-body-icon">
-              <i class="ri-line-chart-line"></i>
+            <i class="ri-user-fill"></i>
             </div>
-            <h5 class="card-title">Total Penjualan</h5>
+            <h5 class="card-title">User</h5>
             <div class="display-4">1000</div>
             <a class="detail" href="">
               <p class="card-text text-white">Lihat Detail <i class="ri-arrow-right-s-line"></i></p>

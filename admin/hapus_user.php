@@ -1,6 +1,6 @@
 <?php 
-if( isset($_GET["id"])){
-    $id = $_GET["id"];
+if( isset($_GET["id_users"])){
+    $id_users = $_GET["id_users"];
 
     $servername = "localhost";
     $username = "root";
@@ -9,10 +9,10 @@ if( isset($_GET["id"])){
 
     $connection = new mysqli($servername, $username, $password, $database);
 
-    $sql = "DELETE FROM `barang` WHERE id=$id";
+    $sql = "DELETE FROM `users` WHERE id_users=$id_users";
     $connection->query($sql);
 }
 
-header("location: barang.php");
+header("location: user.php");
 exit;
 ?>

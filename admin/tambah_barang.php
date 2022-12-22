@@ -9,28 +9,36 @@ $database = "afterguilty";
 
 $connection = new mysqli($servername, $username, $password, $database);
 
-$nama   = "";
-$ukuran = "";
-$harga  = "";
-$stock  = "";
+$nama       = "";
+$deskripsi  = "";
+$ukuran     = "";
+$harga      = "";
+$stock      = "";
+$gambar     = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $nama = $_POST["nama"];
+  $deskripsi = $_POST["deskripsi"];
   $ukuran = $_POST["ukuran"];
   $harga = $_POST["harga"];
   $stock = $_POST["stock"];
+
+  $extensi = explode(".", $_FILES['gambar']['name']);
+  $gambar = "gbr-" . round(microtime(true)) . ".".end($extensi);
+  $sumber = $_FILES['gambar']['tmp_name'];
+  $upload = move_uploaded_file($sumber, "hasil_gambar/" . $gambar);
 
   $errorMessage = "";
   $successMessage = "";
 
   do {
-    if (empty($nama) || empty($ukuran) || empty($harga) || empty($stock)) {
+    if (empty($nama) || empty($deskripsi) || empty($ukuran) || empty($harga) || empty($stock) || empty($gambar)) {
       $errorMessage = "Tolong Diisi Semua";
       break;
     }
 
-    $sql = "INSERT INTO barang (nama, ukuran, harga, stock)" .
-      "VALUES ('$nama', '$ukuran', '$harga', '$stock')";
+    $sql = "INSERT INTO barang (nama, deskripsi, ukuran, harga, stock, gambar)" .
+      "VALUES ('$nama', '$deskripsi', '$ukuran', '$harga', '$stock', '$gambar')";
     $result = $connection->query($sql);
 
     if (!$result) {
@@ -38,10 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       break;
     }
 
-    $nama   = "";
-    $ukuran = "";
-    $harga  = "";
-    $stock  = "";
+    $nama      = "";
+    $deskripsi = "";
+    $ukuran    = "";
+    $harga     = "";
+    $stock     = "";
+    $gambar    = "";
 
     $successMessage = "Barang Sudah Ditambahkan";
 
@@ -83,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <hr class="bg-secondary">
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="total_penjualan.php"><i class="ri-line-chart-line"></i></i> Total Penjualan</a>
+          <a class="nav-link text-white" href="user.php"><i class="ri-user-fill"></i> User</a>
           <hr class="bg-secondary">
         </li>
       </ul>
@@ -104,11 +114,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       }
       ?>
 
-      <form method="post">
+      <form action="" method="post">
         <div class="row mb-3">
           <label class="col-sm-3 col-form-label">Nama</label>
           <div class="col-sm-6">
             <input type="text" class="form-control" name="nama" value="<?php echo $nama; ?>">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="col-sm-3 col-form-label">Deskripsi</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" name="deskripsi" value="<?php echo $deskripsi; ?>">
           </div>
         </div>
 
@@ -127,14 +144,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row mb-3">
           <label class="col-sm-3 col-form-label">Harga</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" name="harga" value="<?php echo $harga; ?>">
+            <input type="number" class="form-control" name="harga" value="<?php echo $harga; ?>">
           </div>
         </div>
 
         <div class="row mb-3">
           <label class="col-sm-3 col-form-label">Stock</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" name="stock" value="<?php echo $stock; ?>">
+            <input type="number" class="form-control" name="stock" value="<?php echo $stock; ?>">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="col-sm-3 col-form-label">Gambar</label>
+          <div class="col-sm-6">
+            <input type="file" class="form-control" name="gambar" value="<?php echo $gambar; ?>">
           </div>
         </div>
 
