@@ -9,3 +9,7 @@ body{
 .nav-item a:hover{
     color: #fff;
 }
+.thumbnail a:hover{
+    transition: all 0.4 ease-in-out;
+    transform: scale(1.1);
+}

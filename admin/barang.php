@@ -23,7 +23,7 @@ include "inclaude\header.php";
 
 <body>
   <div class="menu no-gutters">
-    <div class="col-md-2 bg-dark pr-3 pt-4">
+    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="index.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
@@ -40,7 +40,7 @@ include "inclaude\header.php";
       </ul>
     </div>
 
-    <div class="col-md-10 p-5 pt-3">
+    <div class="col-md-10 p-5 pt-3" style="margin-left: 16%;" >
       <h3><i class="ri-file-list-2-fill mr-2"></i>BARANG</h3>
       <hr>
       <a class="btn btn-primary" href="tambah_barang.php" role="button">Tambah Barang</a>
@@ -91,7 +91,9 @@ include "inclaude\header.php";
             <td>$row[ukuran]</td>
             <td>Rp.$row[harga]</td>
             <td>$row[stock]</td>
-            <td>$row[gambar]</td>
+            <td>
+                <img src='../hasil_gambar/$row[gambar]' style='widht: 50vw; width: 50px;'>
+            </td>
             <td>
               <a class='btn btn-primary btn-sm' href='edit.php?id=$row[id]'>Edit</a>
               <a class='btn btn-danger btn-sm' href='hapus.php?id=$row[id]'>Hapus</a>
@@ -101,7 +103,6 @@ include "inclaude\header.php";
             $no++;
           }
           ?>
-
 
 
 

@@ -2,7 +2,11 @@
 include "inclaude\db.php";
 include "inclaude\header.php";
 ?>
-
+<?php
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -33,7 +37,6 @@ include "inclaude\header.php";
                     <th scope="col">Harga</th>
                     <th scope="col">Jumlah</th>
                     <th scope="col">Total</th>
-                    <th scope="col">Hapus</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,15 +58,47 @@ include "inclaude\header.php";
                         <td>Rp.<?php echo number_format($pecah["harga"]); ?></td>
                         <td><?php echo $jumlah; ?></td>
                         <td>Rp.<?php echo number_format($subharga); ?></td>
-                        <td>
-                        <a class='btn btn-danger btn-sm' href='inclaude\hapus.php?id=<?php echo $id ?>'>Hapus</a>
-                        </td>
                     </tr>
                     <?php $no++; ?>
                 <?php endforeach ?>
             </tbody>
         </table>
-        <a href="checkout.php" class="btn btn-outline-dark text-white" style="background: #222222; float: right;margin-right: 10px; width: 15%;">Check Out</a>
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="text" readonly value="<?php echo $_SESSION['nama_lengkap'] ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="text" readonly value="<?php echo $_SESSION['telp'] ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="text" readonly value="<?php echo $_SESSION['alamat'] ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select">
+                        <option value="">Pilih Ongkos Kirim</option>
+                        <?php 
+                        $ambil = $connection->query("SELECT * FROM ongkir");
+                        while($perongkir = $ambil->fetch_assoc()){
+                        ?>
+                        <option value="">
+                            <?php echo $perongkir['nama_kota'] ?>.-
+                            <?php echo $perongkir['tarif'] ?>
+                        </option>
+                        <?php } ?>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+
+        <!-- <a href="" class="btn btn-outline-dark text-white" style="background: #222222; float: right;margin-right: 10px; width: 15%;">Check Out</a> -->
     </div>
 
 

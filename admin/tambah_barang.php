@@ -23,10 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $harga = $_POST["harga"];
   $stock = $_POST["stock"];
 
-  $extensi = explode(".", $_FILES['gambar']['name']);
-  $gambar = "gbr-" . round(microtime(true)) . ".".end($extensi);
-  $sumber = $_FILES['gambar']['tmp_name'];
-  $upload = move_uploaded_file($sumber, "hasil_gambar/" . $gambar);
+ $gambar = $_FILES["gambar"]["name"];
+ $sumber =$_FILES["gambar"]["tmp_name"];
+ move_uploaded_file($sumber, "../hasil_gambar/".$gambar);  
+
 
   $errorMessage = "";
   $successMessage = "";
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
   <div class="menu_tambah no-gutters">
-    <div class="col-md-2 bg-dark pr-3 pt-4">
+    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="index.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </ul>
     </div>
 
-    <div class="col-md-10 p-5 pt-3">
+    <div class="col-md-10 p-5 pt-3" style="margin-left: 16%;">
       <h3><i class="ri-file-list-2-fill mr-2"></i>TAMBAH BARANG</h3>
       <hr>
 
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       }
       ?>
 
-      <form action="" method="post">
+      <form action="" method="post" enctype="multipart/form-data">
         <div class="row mb-3">
           <label class="col-sm-3 col-form-label">Nama</label>
           <div class="col-sm-6">
@@ -158,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row mb-3">
           <label class="col-sm-3 col-form-label">Gambar</label>
           <div class="col-sm-6">
-            <input type="file" class="form-control" name="gambar" value="<?php echo $gambar; ?>">
+            <input type="file" class="form-control" name="gambar" value="<img src='hasil_gambar/<?php echo $gambar; ?>'>">
           </div>
         </div>
 

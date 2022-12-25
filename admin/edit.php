@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 <body>
   <div class="menu_tambah no-gutters">
-    <div class="col-md-2 bg-dark pr-3 pt-4">
+    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="index.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       </ul>
     </div>
 
-    <div class="col-md-10 p-5 pt-3">
+    <div class="col-md-10 p-5 pt-3" style="margin-left: 16%;">
       <h3><i class="ri-file-list-2-fill mr-2"></i>EDIT BARANG</h3>
       <hr>
 
