@@ -2,6 +2,12 @@
 include "inclaude\db.php";
 include "inclaude\header.php";
 ?>
+<?php
+if (!isset($_SESSION['pembeli'])) {
+    echo "<script>alert('Login Terlebih dahulu')</script>";
+    echo "<script>location='login.php'</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -108,7 +114,7 @@ include "inclaude\header.php";
             $tanggal_beli = date("Y-m-d");
 
             $ambil = $connection->query("SELECT * FROM ongkir WHERE id_ongkir='$id_ongkir'");
-            $arrayongkir = $ambil->fetch_assoc();
+            $arrayongkir = $ambil->fetch_assoc();;
             $tarif = $arrayongkir['tarif'];
 
             $total_beli = $totalbelanja + $tarif;
@@ -117,12 +123,21 @@ include "inclaude\header.php";
             $connection->query("INSERT INTO beli(id_users,id_ongkir,tanggal_beli,total_beli)
                         VALUE ('$id_users','$id_ongkir','$tanggal_beli','$total_beli')");
 
-                /// mendapatkan id_beli yang baru terjadi
+            /// mendapatkan id_beli yang baru terjadi
 
             $id_beli_terbaru = $connection->insert_id;
 
-            foreach ($_SESSION["keranjang"] as $id => $jumlah){
-                $connection->query("INSERT INTO  beli_barang (id_beli, id, jumlah) VALUES ($id_beli_terbaru,$id,$jumlah)");
+            foreach ($_SESSION["keranjang"] as $id => $jumlah) {
+
+                $ambil = $connection->query("SELECT * FROM barang WHERE id='$id'");
+                $perbarang = $ambil->fetch_assoc();
+
+                $nama_beli = $perbarang['nama'];
+                $ukuran_beli = $perbarang['ukuran'];
+                $harga_beli = $perbarang['harga'];
+
+                $subharga = $perbarang['harga'] * $jumlah;
+                $connection->query("INSERT INTO  beli_barang (id_beli, id,nama_beli,ukuran_beli,harga_beli, jumlah, subharga) VALUES ('$id_beli_terbaru','$id','$nama_beli','$ukuran_beli','$harga_beli', '$jumlah', '$subharga')");
             }
             //mengkosongkan keranjang
             unset($_SESSION["keranjang"]);

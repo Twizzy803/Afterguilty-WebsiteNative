@@ -30,6 +30,7 @@ include "inclaude\header.php";
                                         WHERE beli.id_beli ='$_GET[id]'");
             $nota = $ambil->fetch_assoc();
             ?>
+            <pre><?php print_r($nota); ?></pre>
 
             <strong><?php echo $nota['nama_lengkap']; ?></strong><br>
             <p>
@@ -38,7 +39,7 @@ include "inclaude\header.php";
             </p>
             <p>
                 Tanggal: <?php echo $nota['tanggal_beli']; ?><br>
-                Total: <?php echo $nota['total_beli']; ?>
+                Total: Rp.<?php echo number_format($nota['total_beli']); ?>
             </p>
 
             <table class="table table-bordered">
@@ -46,6 +47,7 @@ include "inclaude\header.php";
                     <tr>
                         <th>No</th>
                         <th>Nama Produk</th>
+                        <th>Ukuran</th>
                         <th>Harga</th>
                         <th>Jumlah</th>
                         <th>Subtotal</th>
@@ -53,17 +55,15 @@ include "inclaude\header.php";
                 </thead>
                 <tbody>
                     <?php $no = 1; ?>
-                    <?php $ambil = $connection->query("SELECT * FROM beli_barang JOIN barang ON
-                                            beli_barang.id=barang.id
-                                            WHERE beli_barang.id_beli='$_GET[id]'"); ?>
+                    <?php $ambil = $connection->query("SELECT * FROM beli_barang WHERE id_beli = '$_GET[id]'"); ?>
                     <?php while ($pecah = $ambil->fetch_assoc()) { ?>
                         <tr>
                             <td><?php echo $no; ?></td>
-                            <td><?php echo $pecah['nama']; ?></td>
-                            <td><?php echo $pecah['harga']; ?></td>
+                            <td><?php echo $pecah['nama_beli']; ?></td>
+                            <td><?php echo $pecah['ukuran_beli']; ?></td>
+                            <td>Rp.<?php echo number_format($pecah['harga_beli']); ?></td>
                             <td><?php echo $pecah['jumlah']; ?></td>
-                            <td>
-                                <?php echo $pecah['harga'] * $pecah['jumlah']; ?>
+                            <td>Rp.<?php echo number_format($pecah['subharga']); ?>
                             </td>
                         </tr>
                         <?php $no++; ?>
