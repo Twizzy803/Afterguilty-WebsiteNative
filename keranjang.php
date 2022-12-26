@@ -2,6 +2,12 @@
 include "inclaude\db.php";
 include "inclaude\header.php";
 ?>
+<?php 
+if(empty($_SESSION["keranjang"]) OR !isset($_SESSION["keranjang"])){
+    echo "<script>alert('Keranjang kosong, Silahkan belanja dulu!!')</script>";
+    echo "<script>location='index.php'</script>";
+}
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -56,7 +62,7 @@ include "inclaude\header.php";
                         <td><?php echo $jumlah; ?></td>
                         <td>Rp.<?php echo number_format($subharga); ?></td>
                         <td>
-                        <a class='btn btn-danger btn-sm' href='inclaude\hapus.php?id=<?php echo $id ?>'>Hapus</a>
+                        <a class='btn btn-danger btn-sm' href='hapus.php?id=<?php echo $id ?>'>Hapus</a>
                         </td>
                     </tr>
                     <?php $no++; ?>

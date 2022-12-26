@@ -2,11 +2,6 @@
 include "inclaude\db.php";
 include "inclaude\header.php";
 ?>
-<?php
-// echo "<pre>";
-// print_r($_SESSION);
-// echo "</pre>";
-?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -41,6 +36,7 @@ include "inclaude\header.php";
             </thead>
             <tbody>
                 <?php $no = 1; ?>
+                <?php $totalbelanja = 0; ?>
                 <?php foreach ($_SESSION["keranjang"] as $id => $jumlah) : ?>
                     <!-- Menampilkan Produk yang sedang diperulangkan berdasarkan id -->
                     <?php
@@ -60,8 +56,15 @@ include "inclaude\header.php";
                         <td>Rp.<?php echo number_format($subharga); ?></td>
                     </tr>
                     <?php $no++; ?>
+                    <?php $totalbelanja += $subharga; ?>
                 <?php endforeach ?>
             </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="6">Total Belanja</th>
+                    <th>Rp. <?php echo number_format($totalbelanja) ?></th>
+                </tr>
+            </tfoot>
         </table>
         <form action="" method="post">
             <div class="row">
@@ -80,27 +83,59 @@ include "inclaude\header.php";
                         <input type="text" readonly value="<?php echo $_SESSION['alamat'] ?>" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <select class="form-select">
+                <div class="col-md-3">
+                    <select class="form-select" name="id_ongkir">
                         <option value="">Pilih Ongkos Kirim</option>
-                        <?php 
+                        <?php
                         $ambil = $connection->query("SELECT * FROM ongkir");
-                        while($perongkir = $ambil->fetch_assoc()){
+                        while ($perongkir = $ambil->fetch_assoc()) {
                         ?>
-                        <option value="">
-                            <?php echo $perongkir['nama_kota'] ?>.-
-                            <?php echo $perongkir['tarif'] ?>
-                        </option>
+                            <option value="<?php echo $perongkir['id_ongkir'] ?>">
+                                <?php echo $perongkir['nama_kota'] ?>.-
+                                <?php echo $perongkir['tarif'] ?>
+                            </option>
                         <?php } ?>
                     </select>
                 </div>
             </div>
+            <button name="checkout" class="btn btn-outline-dark text-white" style="background: #222222; float: right;margin-right: 10px; width: 15%;margin-top: 10px;">Check Out</button>
         </form>
+
+        <?php
+        if (isset($_POST["checkout"])) {
+            $id_users = $_SESSION["id_users"];
+            $id_ongkir = $_POST["id_ongkir"];
+            $tanggal_beli = date("Y-m-d");
+
+            $ambil = $connection->query("SELECT * FROM ongkir WHERE id_ongkir='$id_ongkir'");
+            $arrayongkir = $ambil->fetch_assoc();
+            $tarif = $arrayongkir['tarif'];
+
+            $total_beli = $totalbelanja + $tarif;
+
+            //menyimpan data ke tabel beli
+            $connection->query("INSERT INTO beli(id_users,id_ongkir,tanggal_beli,total_beli)
+                        VALUE ('$id_users','$id_ongkir','$tanggal_beli','$total_beli')");
+
+                /// mendapatkan id_beli yang baru terjadi
+
+            $id_beli_terbaru = $connection->insert_id;
+
+            foreach ($_SESSION["keranjang"] as $id => $jumlah){
+                $connection->query("INSERT INTO  beli_barang (id_beli, id, jumlah) VALUES ($id_beli_terbaru,$id,$jumlah)");
+            }
+            //mengkosongkan keranjang
+            unset($_SESSION["keranjang"]);
+
+            //Tampilan dipindahkan ke halaman nota.
+            echo "<script>alert('Pembelian Anda Sukses');</script>";
+            echo "<script>location='nota.php?id=$id_beli_terbaru'</script>";
+        }
+        ?>
 
 
         <!-- <a href="" class="btn btn-outline-dark text-white" style="background: #222222; float: right;margin-right: 10px; width: 15%;">Check Out</a> -->
     </div>
-
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
