@@ -23,9 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $harga = $_POST["harga"];
   $stock = $_POST["stock"];
 
- $gambar = $_FILES["gambar"]["name"];
- $sumber =$_FILES["gambar"]["tmp_name"];
- move_uploaded_file($sumber, "../hasil_gambar/".$gambar);  
+  $gambar = $_FILES["gambar"]["name"];
+  $sumber = $_FILES["gambar"]["tmp_name"];
+  move_uploaded_file($sumber, "../hasil_gambar/" . $gambar);
 
 
   $errorMessage = "";
@@ -96,6 +96,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <a class="nav-link text-white" href="user.php"><i class="ri-user-fill"></i> User</a>
           <hr class="bg-secondary">
         </li>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>Selamat Datang <br><?php echo $_SESSION['email'] ?></strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="..\inclaude\logout.php">Sign out</a></li>
+          </ul>
+        </div>
       </ul>
     </div>
 

@@ -39,11 +39,24 @@ include "function.php";
           <a class="nav-link text-white" href="user.php"><i class="ri-user-fill"></i> User</a>
           <hr class="bg-secondary">
         </li>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>Selamat Datang <br> <?php echo $_SESSION['email'] ?></strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li><a class="dropdown-item" href="profile.php?id=<?php echo $row['id_users']; ?>">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="..\inclaude\logout.php">Sign out</a></li>
+          </ul>
+        </div>
       </ul>
     </div>
 
     <div class="col-md-10 p-5 pt-3" style="margin-left: 16%;">
-      Selamat Datang <?php echo $_SESSION['email'] ?>
       <h3><i class="ri-dashboard-2-fill mr-2"></i>DASHBOARD</h3>
       <hr>
 
