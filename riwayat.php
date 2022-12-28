@@ -24,7 +24,7 @@ include "inclaude\header.php";
 
 <body>
     <?php
-    if (!isset($_SESSION["users"]) or empty($_SESSION["users"])) {
+    if (!isset($_SESSION["pembeli"]) or empty($_SESSION["pembeli"])) {
         echo "<script>alert('silahkan login dulu oiii');</script>";
         echo "<script>location='login.php';</script>";
         exit();
@@ -59,7 +59,7 @@ include "inclaude\header.php";
                     <td>Rp. <?php echo number_format($pecah["total_beli"]) ?></td>
                     <td>
                         <a href="nota.php?id=<?php echo $pecah["id_beli"] ?>" class="btn btn-info">Nota</a>
-                        <a href="" class="btn btn-success">Pembayaran</a>
+                        <a href="pembayaran.php?id=<?php echo $pecah["id_users"]; ?>" class="btn btn-success">Pembayaran</a>
                     </td>
                 </tr>
                 <?php $no++; ?>
