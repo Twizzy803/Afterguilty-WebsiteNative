@@ -38,16 +38,36 @@ $connection = new mysqli("localhost", "root", "", "afterguilty");
                     <div class="thumbnail shadow p-3 mb-5" style="border-radius: 10px;">
                         <img src="hasil_gambar/<?php echo $perbarang['gambar']; ?>" style="width: 20vw; background-color: #00000010; border-radius: 5px;">
                         <div class="cantion">
-                            <a href="detail.php?id=<?php echo $perbarang ['id']; ?>" style="color: #181818;">
+                            <a href="detail.php?id=<?php echo $perbarang['id']; ?>" style="color: #181818;">
                                 <h6><?php echo $perbarang['nama'] ?></h6>
                             </a>
                             <h5>Rp.<?php echo number_format($perbarang['harga']) ?></h5>
-                            <a href="beli.php?id=<?php echo $perbarang ['id']; ?>" class="btn btn-outline-white mr-30" style="background: #222222;">Beli</a>
+                            <a href="beli.php?id=<?php echo $perbarang['id']; ?>" class="btn btn-outline-white mr-30" style="background: #222222;">Beli</a>
                             <span class="btn btn-outline-white" style="color: #222222;">Stock: <?php echo $perbarang['stock'] ?></span>
                         </div>
                     </div>
                 </div>
             <?php } ?>
+        </div>
+
+        <!-- Footer -->
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                        <svg class="bi" width="30" height="24">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                    </a>
+                    <span class="mb-3 mb-md-0 text-muted">© 2022 AfterGuilty Store. All Right Reserved</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <a href="https://www.instagram.com/afterguilty.store/" style="color: #181818;"><i class="bi bi-instagram" style="margin-right: 10px;"></i></a>
+                    <a href="" style="color: #181818;"><i class="bi bi-facebook" style="margin-right: 10px;"></i></a>
+                    <a href="" style="color: #181818;"><i class="bi bi-twitter" style="margin-right: 10px;"></i></a>
+                </ul>
+            </footer>
         </div>
 
     </body>

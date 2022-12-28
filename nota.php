@@ -24,23 +24,51 @@ include "inclaude\header.php";
 <body>
     <section class="konten">
         <div class="container">
-            <h2>Detail Pembelian</h2>
+            <h2>Detail Pembelian</h2><br>
             <?php
             $ambil = $connection->query("SELECT * FROM beli JOIN users_login ON beli.id_users=users_login.id_users
                                         WHERE beli.id_beli ='$_GET[id]'");
             $nota = $ambil->fetch_assoc();
             ?>
-            <pre><?php print_r($nota); ?></pre>
+            <!-- <pre><?php print_r($nota); ?></pre> -->
 
-            <strong><?php echo $nota['nama_lengkap']; ?></strong><br>
-            <p>
-                <?php echo $nota['telp']; ?><br>
-                <?php echo $nota['email']; ?>
-            </p>
-            <p>
-                Tanggal: <?php echo $nota['tanggal_beli']; ?><br>
-                Total: Rp.<?php echo number_format($nota['total_beli']); ?>
-            </p>
+            <?php 
+            //mendapatkan id user yang melakukan pembelian
+            $id_usersbeli = $nota["id_users"];
+             
+            // id user yang melakukan login
+            $id_userslogin = $_SESSION["id_users"];
+
+            if($id_usersbeli!==$id_userslogin){
+                echo "<script>alert('Data tidak sesuai');</script>";
+                echo "<script>location='riwayat.php';</script>";
+                exit();
+            }
+
+            ?>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Pembelian</h3>
+                    <strong>No. Pembelian: <?php echo $nota['id_beli']; ?></strong><br>
+                    Tanggal: <?php echo $nota['tanggal_beli']; ?> <br>
+                    Total: Rp. <?php echo number_format($nota['total_beli']); ?>
+                </div>
+                <div class="col-md-4">
+                    <h3>Pembeli</h3>
+                    <strong><?php echo $nota['nama_lengkap']; ?></strong><br>
+                    <p>
+                        <?php echo $nota['telp']; ?><br>
+                        <?php echo $nota['email']; ?>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Pengiriman</h3>
+                    <strong><?php echo $nota['nama_kota']; ?></strong><br>
+                    Ongkos Kirim : Rp. <?php echo number_format($nota['tarif']); ?><br>
+                    Alamat: <?php echo $nota['alamat_pengiriman']; ?>
+                </div>
+            </div>
 
             <table class="table table-bordered">
                 <thead>
@@ -86,6 +114,26 @@ include "inclaude\header.php";
         </div>
 
     </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">© 2022 AfterGuilty Store. All Right Reserved</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <a href="https://www.instagram.com/afterguilty.store/" style="color: #181818;"><i class="bi bi-instagram" style="margin-right: 10px;"></i></a>
+                <a href="" style="color: #181818;"><i class="bi bi-facebook" style="margin-right: 10px;"></i></a>
+                <a href="" style="color: #181818;"><i class="bi bi-twitter" style="margin-right: 10px;"></i></a>
+            </ul>
+        </footer>
+    </div>
 
 </body>
 

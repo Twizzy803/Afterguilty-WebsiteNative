@@ -2,8 +2,8 @@
 include "inclaude\db.php";
 include "inclaude\header.php";
 ?>
-<?php 
-if(empty($_SESSION["keranjang"]) OR !isset($_SESSION["keranjang"])){
+<?php
+if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
     echo "<script>alert('Keranjang kosong, Silahkan belanja dulu!!')</script>";
     echo "<script>location='index.php'</script>";
 }
@@ -62,7 +62,7 @@ if(empty($_SESSION["keranjang"]) OR !isset($_SESSION["keranjang"])){
                         <td><?php echo $jumlah; ?></td>
                         <td>Rp.<?php echo number_format($subharga); ?></td>
                         <td>
-                        <a class='btn btn-danger btn-sm' href='hapus.php?id=<?php echo $id ?>'>Hapus</a>
+                            <a class='btn btn-danger btn-sm' href='hapus.php?id=<?php echo $id ?>'>Hapus</a>
                         </td>
                     </tr>
                     <?php $no++; ?>
@@ -70,6 +70,27 @@ if(empty($_SESSION["keranjang"]) OR !isset($_SESSION["keranjang"])){
             </tbody>
         </table>
         <a href="checkout.php" class="btn btn-outline-dark text-white" style="background: #222222; float: right;margin-right: 10px; width: 15%;">Check Out</a>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">© 2022 AfterGuilty Store. All Right Reserved</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <a href="https://www.instagram.com/afterguilty.store/" style="color: #181818;"><i class="bi bi-instagram" style="margin-right: 10px;"></i></a>
+                <a href="" style="color: #181818;"><i class="bi bi-facebook" style="margin-right: 10px;"></i></a>
+                <a href="" style="color: #181818;"><i class="bi bi-twitter" style="margin-right: 10px;"></i></a>
+            </ul>
+        </footer>
     </div>
 
 

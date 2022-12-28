@@ -19,7 +19,8 @@
                 <p style="font-size: 2vw;font-family: 'Inter', sans-serif; font-weight: bold;">.Store</p>
             </a>
             <div class="nav-item">
-                <a href="keranjang.php" style="color: #222222;"><i class="ri-shopping-cart-fill" style="width: 10vw;"></i></a>
+                <a href="keranjang.php" style="color: #222222;margin-right: 10px;"><i class="ri-shopping-cart-fill"></i></a>
+                <a href="riwayat.php" style="color: #222222;"><i class="ri-history-line"></i></a>
             </div>
 
             <?php if (isset($_SESSION['email'])) : ?>

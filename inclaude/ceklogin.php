@@ -35,6 +35,12 @@ if (isset($_POST['masuk'])) {
         $_SESSION['telp'] = $db_telp;
         if ($_SESSION['role'] === 'admin') {
             header('Location: ../admin');
+
+            if (isset($_SESSION["keranjang"]) OR !empty($_SESSION["keranjang"])){
+                echo "<script>location='checkout.php';</script>";
+            }else{
+                echo "<script>location='riwayat.php';</script>";
+            }
         } else {
             if ($_SESSION["pembeli"] = $select_login) {
                 header('location: ../checkout.php');

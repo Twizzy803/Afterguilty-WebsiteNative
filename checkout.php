@@ -97,12 +97,16 @@ if (!isset($_SESSION['pembeli'])) {
                         while ($perongkir = $ambil->fetch_assoc()) {
                         ?>
                             <option value="<?php echo $perongkir['id_ongkir'] ?>">
-                                <?php echo $perongkir['nama_kota'] ?>.-
+                                <?php echo $perongkir['nama_kota'] ?>
                                 <?php echo $perongkir['tarif'] ?>
                             </option>
                         <?php } ?>
                     </select>
                 </div>
+            </div> <br>
+            <div class="form-group">
+                <label for="">Alamat Lengkap Pengiriman</label>
+                <textarea class="form-control" name="alamat_pengiriman" placeholder="Masukkan alamat pengiriman Anda"></textarea>
             </div>
             <button name="checkout" class="btn btn-outline-dark text-white" style="background: #222222; float: right;margin-right: 10px; width: 15%;margin-top: 10px;">Check Out</button>
         </form>
@@ -112,16 +116,18 @@ if (!isset($_SESSION['pembeli'])) {
             $id_users = $_SESSION["id_users"];
             $id_ongkir = $_POST["id_ongkir"];
             $tanggal_beli = date("Y-m-d");
+            $alamat_pengiriman = $_POST['alamat_pengiriman'];
 
             $ambil = $connection->query("SELECT * FROM ongkir WHERE id_ongkir='$id_ongkir'");
-            $arrayongkir = $ambil->fetch_assoc();;
+            $arrayongkir = $ambil->fetch_assoc();
+            $nama_kota = $arrayongkir['nama_kota'];
             $tarif = $arrayongkir['tarif'];
 
             $total_beli = $totalbelanja + $tarif;
 
             //menyimpan data ke tabel beli
-            $connection->query("INSERT INTO beli(id_users,id_ongkir,tanggal_beli,total_beli)
-                        VALUE ('$id_users','$id_ongkir','$tanggal_beli','$total_beli')");
+            $connection->query("INSERT INTO beli(id_users,id_ongkir,tanggal_beli,total_beli,nama_kota,tarif,alamat_pengiriman)
+                        VALUE ('$id_users','$id_ongkir','$tanggal_beli','$total_beli','$nama_kota','$tarif','$alamat_pengiriman')");
 
             /// mendapatkan id_beli yang baru terjadi
 
@@ -137,7 +143,8 @@ if (!isset($_SESSION['pembeli'])) {
                 $harga_beli = $perbarang['harga'];
 
                 $subharga = $perbarang['harga'] * $jumlah;
-                $connection->query("INSERT INTO  beli_barang (id_beli, id,nama_beli,ukuran_beli,harga_beli, jumlah, subharga) VALUES ('$id_beli_terbaru','$id','$nama_beli','$ukuran_beli','$harga_beli', '$jumlah', '$subharga')");
+                $connection->query("INSERT INTO  beli_barang (id_beli, id,nama_beli,ukuran_beli,harga_beli, subharga, jumlah)
+                 VALUES ('$id_beli_terbaru','$id','$nama_beli','$ukuran_beli','$harga_beli', '$subharga', '$jumlah')");
             }
             //mengkosongkan keranjang
             unset($_SESSION["keranjang"]);
