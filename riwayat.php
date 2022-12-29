@@ -59,11 +59,23 @@ echo "</pre>";
                 <tr>
                     <td><?php echo $no ?></td>
                     <td><?php echo $pecah["tanggal_beli"] ?></td>
-                    <td><?php echo $pecah["status_pembelian"] ?></td>
+                    <td>
+                        <?php echo $pecah["status_pembelian"] ?><br>
+                        <?php if (!empty($pecah['resi_pengiriman'])) : ?>
+                            Resi : <?php echo $pecah['resi_pengiriman']; ?>
+                        <?php endif ?>
+                    </td>
                     <td>Rp. <?php echo number_format($pecah["total_beli"]) ?></td>
                     <td>
                         <a href="nota.php?id=<?php echo $pecah["id_beli"] ?>" class="btn btn-info">Nota</a>
-                        <a href="pembayaran.php?id=<?php echo $pecah["id_beli"]; ?>" class="btn btn-success">Pembayaran</a>
+
+                        <?php
+                         if($pecah['status_pembelian']=="pending"): ?>
+                        <a href="pembayaran.php?id=<?php echo $pecah["id_beli"]; ?>" class="btn btn-success">
+                        Input Pembayaran</a>
+                        <?php else : ?>
+                            <a href="lihat_pembayaran.php?id=<?php echo $pecah["id_beli"]; ?>" class="btn btn-warning">Lihat Pembayaran</a>
+                        <?php endif ?>
                     </td>
                 </tr>
                 <?php $no++; ?>

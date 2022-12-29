@@ -62,64 +62,80 @@ include "inclaude\header.php";
             </ul>
         </div>
 
+
         <div class="col-md-10 p-5 pt-3" style="margin-left: 18%;">
-            <h3><i class="ri-user-fill"></i>USER</h3>
-            <hr>
+            <h3><i class="ri-money-dollar-circle-fill"></i>Data Pembayaran</h3>
+            <hr><br>
+            <?php
+            $id_beli = $_GET['id'];
 
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Lengkap</th>
-                        <th scope="col">Alamat</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Pilih</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $database = "afterguilty";
-
-                    $connection = mysqli_connect($servername, $username, $password, $database);
-
-                    // if ($connection) {
-                    //   echo "Server Connected";
-                    // } else {
-                    //   echo "Server not Connected";
-                    // }
-                    $no = 1;
-                    $sql  = "SELECT * FROM users, users_login WHERE users.id_users = users_login.id_users";
-                    $result = $connection->query($sql);
-
-                    if (!$result) {
-                        die("invalid query: " . $connection->error);
-                    }
-
-                    while ($row = $result->fetch_assoc()) {
-                        echo "
-            <tr>
-            <td>$no</td>
-            <td>$row[nama_lengkap]</td>
-            <td>$row[alamat]</td>
-            <td>$row[role]</td>
-            <td>
-              <a class='btn btn-primary btn-sm'href='edit_user.php?id_users=$row[id_users]'>Edit</a>
-              <a class='btn btn-danger btn-sm' href='hapus_user.php?id_users=$row[id_users]'>Hapus</a>
-            </td>
-          </tr>";
-                        $no++;
-                    }
-                    ?>
+            //mengambil data pembayaran berdasarkan id_beli
+            $ambil = $connection->query("SELECT * FROM pembayaran WHERE id_beli='$id_beli'");
+            $detail = $ambil->fetch_assoc();
+            ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table">
+                        <tr>
+                            <th>Nama</th>
+                            <td><?php echo $detail['nama']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Bank</th>
+                            <td><?php echo $detail['bank']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Jumlah</th>
+                            <td>Rp. <?php echo number_format($detail['jumlah']); ?></td>
+                        </tr>
+                        <tr>
+                            <th>Tanggal</th>
+                            <td><?php echo $detail['tanggal']; ?></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <img src="../bukti_pembayaran/<?php echo $detail['bukti'] ?>" alt="" style="width: 250px;">
+                </div>
+            </div>
 
 
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="">No. Resi Pengiriman</label>
+                    <input type="text" class="form-control" name="resi">
+                </div>
+                <div class="form-group">
+                    <label for="">Status</label>
+                    <select name="status" id="" class="form-control">
+                        <option value="">Pilih Status</option>
+                        <option value="lunas">Lunas</option>
+                        <option value="barang dikirim">Barang Dikirim</option>
+                        <option value="batal">Batal</option>
+                    </select>
+                </div> <br>
+                <button class="btn btn-primary" name="proses">Proses</button>
+            </form>
 
 
-                </tbody>
-            </table>
+            <?php
+            if (isset($_POST["proses"])) {
+                $resi = $_POST["resi"];
+                $status = $_POST["status"];
+                $connection->query("UPDATE beli SET resi_pengiriman='$resi', status_pembelian='$status'
+                WHERE id_beli='$id_beli'");
+
+                echo "<script>alert('data pembelian terupdate');</script>";
+                echo "<script>location='pembelian.php';</script>";
+            }
+            ?>
 
         </div>
-    </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="js\admin_user.js"></script>
+</body>
+
+</html>

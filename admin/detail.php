@@ -63,63 +63,57 @@ include "inclaude\header.php";
         </div>
 
         <div class="col-md-10 p-5 pt-3" style="margin-left: 18%;">
-            <h3><i class="ri-user-fill"></i>USER</h3>
+            <h3><i class="ri-information-fill"></i>Detail Pembelian</h3>
             <hr>
+            <?php
+            $ambil = $connection->query("SELECT * FROM beli INNER JOIN users ON
+            beli.id_users=users.id_users INNER JOIN users_login ON beli.id_users=users_login.id_users WHERE beli.id_beli='$_GET[id]'");
+            $detail = $ambil->fetch_assoc();
+            ?>
 
-            <table class="table table-striped">
+            <strong><?php echo $detail['nama_lengkap']; ?></strong>
+            <p>
+                <?php echo $detail['telp']; ?> <br>
+                <?php echo $detail['email']; ?>
+            </p>
+            <p>
+                Tanggal: <?php echo $detail['tanggal_beli']; ?> <br>
+                Total: <?php echo number_format($detail['total_beli']); ?>
+            </p>
+            <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Lengkap</th>
-                        <th scope="col">Alamat</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Pilih</th>
+                        <th>No</th>
+                        <th>Nama Produk</th>
+                        <th>Ukuran</th>
+                        <th>Harga</th>
+                        <th>Jumlah</th>
+                        <th>Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
-
-                    <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $database = "afterguilty";
-
-                    $connection = mysqli_connect($servername, $username, $password, $database);
-
-                    // if ($connection) {
-                    //   echo "Server Connected";
-                    // } else {
-                    //   echo "Server not Connected";
-                    // }
-                    $no = 1;
-                    $sql  = "SELECT * FROM users, users_login WHERE users.id_users = users_login.id_users";
-                    $result = $connection->query($sql);
-
-                    if (!$result) {
-                        die("invalid query: " . $connection->error);
-                    }
-
-                    while ($row = $result->fetch_assoc()) {
-                        echo "
-            <tr>
-            <td>$no</td>
-            <td>$row[nama_lengkap]</td>
-            <td>$row[alamat]</td>
-            <td>$row[role]</td>
-            <td>
-              <a class='btn btn-primary btn-sm'href='edit_user.php?id_users=$row[id_users]'>Edit</a>
-              <a class='btn btn-danger btn-sm' href='hapus_user.php?id_users=$row[id_users]'>Hapus</a>
-            </td>
-          </tr>";
-                        $no++;
-                    }
-                    ?>
-
-
-
-
+                    <?php $no = 1; ?>
+                    <?php $ambil = $connection->query("SELECT * FROM beli_barang WHERE id_beli = '$_GET[id]'"); ?>
+                    <?php while ($pecah = $ambil->fetch_assoc()) { ?>
+                        <tr>
+                            <td><?php echo $no; ?></td>
+                            <td><?php echo $pecah['nama_beli']; ?></td>
+                            <td><?php echo $pecah['ukuran_beli']; ?></td>
+                            <td>Rp.<?php echo number_format($pecah['harga_beli']); ?></td>
+                            <td><?php echo $pecah['jumlah']; ?></td>
+                            <td>Rp.<?php echo number_format($pecah['subharga']); ?>
+                            </td>
+                        </tr>
+                        <?php $no++; ?>
+                    <?php } ?>
                 </tbody>
             </table>
-
         </div>
-    </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="js\admin_user.js"></script>
+</body>
+
+</html>

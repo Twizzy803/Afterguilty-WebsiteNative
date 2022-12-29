@@ -146,6 +146,11 @@ if (!isset($_SESSION['pembeli'])) {
                 $connection->query("INSERT INTO  beli_barang (id_beli, id,nama_beli,ukuran_beli,harga_beli, subharga, jumlah)
                  VALUES ('$id_beli_terbaru','$id','$nama_beli','$ukuran_beli','$harga_beli', '$subharga', '$jumlah')");
             }
+            //update stock barang
+            $connection->query("UPDATE barang SET stock = stock -$jumlah
+            WHERE id='$id'");
+
+
             //mengkosongkan keranjang
             unset($_SESSION["keranjang"]);
 

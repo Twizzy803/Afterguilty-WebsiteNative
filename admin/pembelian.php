@@ -1,7 +1,5 @@
 <?php
 include "inclaude\header.php";
-include "function.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -64,43 +62,51 @@ include "function.php";
       </ul>
     </div>
 
+
     <div class="col-md-10 p-5 pt-3" style="margin-left: 18%;">
-      <h3><i class="ri-dashboard-2-fill mr-2"></i>DASHBOARD</h3>
-      <hr>
+      <h3><i class="ri-money-dollar-circle-fill"></i>PEMBELIAN</h3>
+      <hr><br>
 
-      <div class="row">
-        <div class="card1" style="width: 18rem;">
-          <div class="card-body fw-10vw">
-            <div class="card-body-icon">
-              <i class="ri-file-list-2-fill mr-2"></i>
-            </div>
-            <h5 class="card-title">BARANG</h5>
-            <div class="display-4" style="width: 35%;">
-              <?php getTotalBarang(); ?>
-            </div>
-            <a class="detail" href="barang.php">
-              <p class="card-text text-white">Lihat Detail <i class="ri-arrow-right-s-line"></i></p>
-            </a>
-          </div>
-        </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama Pembeli</th>
+            <th scope="col">Tanggal</th>
+            <th scope="col">Status</th>
+            <th scope="col">Total</th>
+            <th scope="col">Pilih</th>
+          </tr>
+        </thead>
+        <tbody>
 
-        <div class="card2" style="width: 18rem;">
-          <div class="card-body">
-            <div class="card2-body-icon">
-              <i class="ri-user-fill"></i>
-            </div>
-            <h5 class="card-title">User</h5>
-            <div class="display-4" style="width: 35%;">
-              <?php getTotalStock(); ?>
-            </div>
-            <a class="detail" href="user.php">
-              <p class="card-text text-white">Lihat Detail <i class="ri-arrow-right-s-line"></i></p>
-            </a>
-          </div>
-        </div>
+          <?php $no = 1; ?>
+          <?php $ambil = $connection->query("SELECT * FROM beli JOIN users ON
+          beli.id_users=users.id_users"); ?>
+          <?php while ($pecah = $ambil->fetch_assoc()) { ?>
+
+            <tr>
+              <td><?php echo $no; ?></td>
+              <td><?php echo $pecah['nama_lengkap']; ?></td>
+              <td><?php echo $pecah['tanggal_beli']; ?></td>
+              <td><?php echo $pecah['status_pembelian']; ?></td>
+              <td><?php echo $pecah['total_beli']; ?></td>
+              <td>
+                <a class='btn btn-info btn-sm' href='detail.php?id=<?php echo $pecah['id_beli']; ?>'>Detail</a>
+
+                <?php if ($pecah['status_pembelian'] !== "pending") : ?>
+                  <a class='btn btn-success' href='pembayaran.php?id=<?php echo $pecah['id_beli']; ?>'>Lihat Pembayaran</a>
+                <?php endif ?>
+              </td>
+            </tr>
+            <?php $no++;  ?>
+          <?php } ?>
 
 
-      </div>
+
+        </tbody>
+      </table>
+
     </div>
   </div>
 
