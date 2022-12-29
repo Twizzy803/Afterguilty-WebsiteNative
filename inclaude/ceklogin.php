@@ -7,7 +7,7 @@ if (isset($_POST['masuk'])) {
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
-    $query = "SELECT * FROM `users_login` JOIN `users` WHERE `email` = '$email' AND `password` = '$pass'";
+    $query = "SELECT * FROM `users_login` JOIN `users` ON users_login.id_users = users.id_users WHERE `email` = '$email' AND `password` = '$pass'";
     $select_login = mysqli_query($connection, $query);
 
     if (!$select_login) {
@@ -35,7 +35,6 @@ if (isset($_POST['masuk'])) {
         $_SESSION['telp'] = $db_telp;
         if ($_SESSION['role'] === 'admin') {
             header('Location: ../admin');
-
         } else {
             if ($_SESSION["pembeli"] = $select_login) {
                 header('location: ../checkout.php');

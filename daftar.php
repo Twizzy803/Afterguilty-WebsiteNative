@@ -38,6 +38,10 @@ include "inclaude\db.php";
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="password" placeholder="********">
             </div>
+            <div class="mb-3" style="width: 30%;margin-left:35%;">
+                <label for="telp" class="form-label">Telepon</label>
+                <input type="text" name="telp" class="form-control" id="telp" placeholder="08..">
+            </div>
             <div class="form-group" style="width: 30%;margin-left:35%;margin-bottom:20px;">
                 <label for="alamat">Alamat Lengkap</label>
                 <textarea class="form-control" name="alamat" required></textarea>

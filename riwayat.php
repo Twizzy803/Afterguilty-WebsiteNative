@@ -1,6 +1,10 @@
 <?php
 include "inclaude\db.php";
 include "inclaude\header.php";
+
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 ?>
 
 
@@ -59,7 +63,7 @@ include "inclaude\header.php";
                     <td>Rp. <?php echo number_format($pecah["total_beli"]) ?></td>
                     <td>
                         <a href="nota.php?id=<?php echo $pecah["id_beli"] ?>" class="btn btn-info">Nota</a>
-                        <a href="pembayaran.php?id=<?php echo $pecah["id_users"]; ?>" class="btn btn-success">Pembayaran</a>
+                        <a href="pembayaran.php?id=<?php echo $pecah["id_beli"]; ?>" class="btn btn-success">Pembayaran</a>
                     </td>
                 </tr>
                 <?php $no++; ?>

@@ -26,7 +26,8 @@ include "inclaude\header.php";
         <div class="container">
             <h2>Detail Pembelian</h2><br>
             <?php
-            $ambil = $connection->query("SELECT * FROM beli JOIN users_login ON beli.id_users=users_login.id_users
+            $ambil = $connection->query("SELECT * FROM beli INNER JOIN users ON beli.id_users=users.id_users
+                                     INNER JOIN users_login ON beli.id_users=users_login.id_users
                                         WHERE beli.id_beli ='$_GET[id]'");
             $nota = $ambil->fetch_assoc();
             ?>
