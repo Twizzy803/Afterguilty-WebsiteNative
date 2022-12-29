@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
           <hr class="bg-secondary">
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="pembelian.php"><i class="ri-booklet-fill"></i> Laporan</a>
+          <a class="nav-link text-white" href="laporan.php"><i class="ri-booklet-fill"></i> Laporan</a>
           <hr class="bg-secondary">
         </li>
         <li class="nav-item">

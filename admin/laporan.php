@@ -2,6 +2,25 @@
 include "inclaude\header.php";
 ?>
 
+<?php
+$semuadata = array();
+$tgl_mulai = "_";
+$tgl_selesai = "_";
+if (isset($_POST["kirim"])) {
+  $tgl_mulai = $_POST["tglm"];
+  $tgl_selesai = $_POST["tgls"];
+  $ambil = $connection->query("SELECT * FROM beli pm LEFT JOIN users pl ON pm.id_users=pl.id_users
+                    WHERE tanggal_beli BETWEEN '$tgl_mulai' AND '$tgl_selesai' ");
+  while ($pecah = $ambil->fetch_assoc()) {
+    $semuadata[] = $pecah;
+  }
+
+  // echo "<pre>";
+  // print_r($semuadata);
+  // echo "</pre>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -64,8 +83,31 @@ include "inclaude\header.php";
 
 
     <div class="col-md-10 p-5 pt-3" style="margin-left: 18%;">
-      <h3><i class="ri-money-dollar-circle-fill"></i>PEMBELIAN</h3>
+      <h3><i class="ri-booklet-fill"></i>LAPORAN</h3>
+      <p> dari <?php echo $tgl_mulai ?> hingga <?php echo $tgl_selesai ?></p>
       <hr><br>
+      <form action="" method="POST">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="form-group">
+              <label for="">Tanggal Mulai</label>
+              <input type="date" class="form-control" name="tglm" value="<?php echo $tgl_mulai ?>">
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group">
+              <label for="">Tanggal Selesai</label>
+              <input type="date" class="form-control" name="tgls" value="<?php echo $tgl_selesai ?>">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="">&nbsp;</label><br>
+              <button class="btn btn-primary" name="kirim">Lihat</button>
+            </div>
+          </div>
+        </div>
+      </form>
 
       <table class="table table-striped">
         <thead>
@@ -73,40 +115,30 @@ include "inclaude\header.php";
             <th scope="col">No</th>
             <th scope="col">Nama Pembeli</th>
             <th scope="col">Tanggal</th>
+            <th scope="col">Jumlah</th>
             <th scope="col">Status</th>
-            <th scope="col">Total</th>
-            <th scope="col">Pilih</th>
           </tr>
         </thead>
         <tbody>
-
-          <?php $no = 1; ?>
-          <?php $ambil = $connection->query("SELECT * FROM beli JOIN users ON
-          beli.id_users=users.id_users"); ?>
-          <?php while ($pecah = $ambil->fetch_assoc()) { ?>
-
+          <?php $total = 0; ?>
+          <?php foreach ($semuadata as $key => $value) : ?>
+            <?php $total+=$value['total_beli'] ?>
             <tr>
-              <td><?php echo $no; ?></td>
-              <td><?php echo $pecah['nama_lengkap']; ?></td>
-              <td><?php echo $pecah['tanggal_beli']; ?></td>
-              <td><?php echo $pecah['status_pembelian']; ?></td>
-              <td><?php echo $pecah['total_beli']; ?></td>
-              <td>
-                <a class='btn btn-info btn-sm' href='detail.php?id=<?php echo $pecah['id_beli']; ?>'>Detail</a>
-
-                <?php if ($pecah['status_pembelian'] !== "pending") : ?>
-                  <a class='btn btn-success' href='pembayaran.php?id=<?php echo $pecah['id_beli']; ?>'>Lihat Pembayaran</a>
-                <?php endif ?>
-              </td>
+              <td><?php echo $key + 1; ?></td>
+              <td><?php echo $value["nama_lengkap"]; ?></td>
+              <td><?php echo $value["tanggal_beli"]; ?></td>
+              <td>Rp. <?php echo number_format($value["total_beli"]); ?></td>
+              <td><?php echo $value["status_pembelian"] ?></td>
             </tr>
-            <?php $no++;  ?>
-          <?php } ?>
-
-
-
+          <?php endforeach ?>
         </tbody>
-      </table>
-
+        <tfoot>
+          <tr>
+            <th colspan="3">Total</th>
+            <th>Rp. <?php echo number_format($total) ?></th>
+            <th></th>
+          </tr>
+        </tfoot>
     </div>
   </div>
 
