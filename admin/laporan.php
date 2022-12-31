@@ -6,11 +6,13 @@ include "inclaude\header.php";
 $semuadata = array();
 $tgl_mulai = "_";
 $tgl_selesai = "_";
+$status = "";
 if (isset($_POST["kirim"])) {
   $tgl_mulai = $_POST["tglm"];
   $tgl_selesai = $_POST["tgls"];
+  $status =  $_POST["status"];
   $ambil = $connection->query("SELECT * FROM beli pm LEFT JOIN users pl ON pm.id_users=pl.id_users
-                    WHERE tanggal_beli BETWEEN '$tgl_mulai' AND '$tgl_selesai' ");
+                    WHERE status_pembelian='$status' AND tanggal_beli BETWEEN '$tgl_mulai' AND '$tgl_selesai' ");
   while ($pecah = $ambil->fetch_assoc()) {
     $semuadata[] = $pecah;
   }
@@ -41,8 +43,8 @@ if (isset($_POST["kirim"])) {
 </head>
 
 <body>
-  <div class="menu no-gutters">
-    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;padding-right: 19%;">
+<div class="menu no-gutters">
+    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;padding-right: 19%; font-size: 1vw;">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="index.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
@@ -70,8 +72,7 @@ if (isset($_POST["kirim"])) {
             <strong>Selamat Datang <br><?php echo $_SESSION['email'] ?></strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="profile.php">Profile</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -88,22 +89,35 @@ if (isset($_POST["kirim"])) {
       <hr><br>
       <form action="" method="POST">
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-3">
             <div class="form-group">
               <label for="">Tanggal Mulai</label>
               <input type="date" class="form-control" name="tglm" value="<?php echo $tgl_mulai ?>">
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-3">
             <div class="form-group">
               <label for="">Tanggal Selesai</label>
               <input type="date" class="form-control" name="tgls" value="<?php echo $tgl_selesai ?>">
             </div>
           </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">Status</label>
+              <select name="status" id="" class="form-control">
+                <option value="">Pilih</option>
+                <option value="Belum dibayar  <?php echo $status == "Belum dibayar" ? "selected" : "";   ?>  ">Belum dibayar</option>
+                <option value="Barang Dikirim  <?php echo $status == "Barang Dikirim" ? "selected" : "";   ?>  ">Barang Dikirim</option>
+                <option value="Barang sudah sampai  <?php echo $status == "Barang sudah sampai" ? "selected" : "";   ?>  ">Barang sudah sampai</option>
+                <option value="Lunas  <?php echo $status == "Lunas" ? "selected" : "";   ?>  ">Lunas</option>
+                <option value="Batal  <?php echo $status == "Batal" ? "selected" : "";   ?>  ">Batal</option>
+              </select>
+            </div>
+          </div>
           <div class="col-md-2">
             <div class="form-group">
               <label for="">&nbsp;</label><br>
-              <button class="btn btn-primary" name="kirim">Lihat</button>
+              <button class="btn btn-primary" name="kirim"><i class="ri-menu-fill"></i>Lihat Laporan</button>
             </div>
           </div>
         </div>
@@ -122,11 +136,11 @@ if (isset($_POST["kirim"])) {
         <tbody>
           <?php $total = 0; ?>
           <?php foreach ($semuadata as $key => $value) : ?>
-            <?php $total+=$value['total_beli'] ?>
+            <?php $total += $value['total_beli'] ?>
             <tr>
               <td><?php echo $key + 1; ?></td>
               <td><?php echo $value["nama_lengkap"]; ?></td>
-              <td><?php echo $value["tanggal_beli"]; ?></td>
+              <td><?php echo date("d F Y", strtotime($value["tanggal_beli"])); ?></td>
               <td>Rp. <?php echo number_format($value["total_beli"]); ?></td>
               <td><?php echo $value["status_pembelian"] ?></td>
             </tr>

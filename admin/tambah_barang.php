@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
   <div class="menu no-gutters">
-    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;padding-right: 19%;">
+    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;padding-right: 19%; font-size: 1vw;">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="index.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
@@ -110,8 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <strong>Selamat Datang <br><?php echo $_SESSION['email'] ?></strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="profile.php">Profile</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>

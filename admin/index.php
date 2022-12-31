@@ -25,7 +25,7 @@ include "function.php";
 
 <body>
   <div class="menu no-gutters">
-    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;padding-right: 19%;">
+    <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;padding-right: 19%; font-size: 1vw;">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="index.php"><i class="ri-dashboard-2-fill mr-2"></i> Dashboard</a>
@@ -53,8 +53,7 @@ include "function.php";
             <strong>Selamat Datang <br><?php echo $_SESSION['email'] ?></strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="profile.php?id=<?php echo $_SESSION['id_users'] ?>">Profile</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -86,12 +85,39 @@ include "function.php";
 
         <div class="card2" style="width: 18rem;">
           <div class="card-body">
-            <div class="card2-body-icon">
-              <i class="ri-user-fill"></i>
+            <div class="card-body-icon">
+              <i class="ri-money-dollar-circle-fill" style="margin-left: 25vw;"></i>
+            </div>
+            <h5 class="card-title">PEMBELIAN</h5>
+            <div class="display-4" style="width: 35%;">
+              <?php getTotalPembelian(); ?>
+            </div>
+            <a class="detail" href="pembelian.php">
+              <p class="card-text text-white">Lihat Detail <i class="ri-arrow-right-s-line"></i></p>
+            </a>
+          </div>
+        </div>
+
+        <div class="card2" style="width: 18rem;">
+          <div class="card-body">
+            <div class="card-body-icon">
+              <i class="ri-booklet-fill" style="margin-left: 50vw;"></i>
+            </div>
+            <h5 class="card-title">LAPORAN</h5>
+            <a class="detail" href="laporan.php" style="position: relative; top: 4.5vw;">
+              <p class="card-text text-white">Lihat Detail <i class="ri-arrow-right-s-line"></i></p>
+            </a>
+          </div>
+        </div>
+
+        <div class="card2" style="width: 18rem; margin-top: 5%;margin-left: 1.5%;">
+          <div class="card-body">
+            <div class="card-body-icon">
+              <i class="ri-user-fill" style="position: relative;top: 15vw;"></i>
             </div>
             <h5 class="card-title">User</h5>
             <div class="display-4" style="width: 35%;">
-              <?php getTotalStock(); ?>
+              <?php getTotalUsers(); ?>
             </div>
             <a class="detail" href="user.php">
               <p class="card-text text-white">Lihat Detail <i class="ri-arrow-right-s-line"></i></p>

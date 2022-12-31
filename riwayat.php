@@ -70,9 +70,9 @@ echo "</pre>";
                         <a href="nota.php?id=<?php echo $pecah["id_beli"] ?>" class="btn btn-info">Nota</a>
 
                         <?php
-                         if($pecah['status_pembelian']=="pending"): ?>
-                        <a href="pembayaran.php?id=<?php echo $pecah["id_beli"]; ?>" class="btn btn-success">
-                        Input Pembayaran</a>
+                        if ($pecah['status_pembelian'] == "Belum dibayar") : ?>
+                            <a href="pembayaran.php?id=<?php echo $pecah["id_beli"]; ?>" class="btn btn-success">
+                                Input Pembayaran</a>
                         <?php else : ?>
                             <a href="lihat_pembayaran.php?id=<?php echo $pecah["id_beli"]; ?>" class="btn btn-warning">Lihat Pembayaran</a>
                         <?php endif ?>

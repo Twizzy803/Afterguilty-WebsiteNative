@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+ob_start();
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -19,10 +21,10 @@
                 <p style="font-size: 2vw;font-family: 'Inter', sans-serif; font-weight: bold;">.Store</p>
             </a>
             <div class="nav-item">
-                <a href="keranjang.php" style="color: #222222;margin-right: 10px;"><i class="ri-shopping-cart-fill"></i></a>
+                <a href="keranjang.php" style="color: #222222;margin-right: 10px;"><i class="ri-shopping-cart-fill" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Keranjang"></i></a>
             </div>
             <div class="nav-item">
-                <a href="riwayat.php" style="color: #222222;"><i class="ri-history-line"></i></a>
+                <a href="riwayat.php" style="color: #222222;"><i class="ri-history-line" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Riwayat"></i></a>
             </div>
 
             <?php if (isset($_SESSION['email'])) : ?>

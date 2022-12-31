@@ -49,8 +49,6 @@ $detail = $ambil->fetch_assoc();
             <p style="color: #565656;"><?php echo $detail['deskripsi'] ?></p>
             <select class="btn btn-outline-dark text-white form-select" style="background: #222222; width: 20%;">
               <option value="M"><?php echo $detail['ukuran'] ?></option>
-              <option value="L"><?php echo $detail['ukuran'] ?></option>
-              <option value="XL"><?php echo $detail['ukuran'] ?></option>
             </select>
             <form action="" method="post" class="mt-2">
               <div class="form-group">
