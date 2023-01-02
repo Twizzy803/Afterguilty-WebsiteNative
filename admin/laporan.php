@@ -38,12 +38,12 @@ if (isset($_POST["kirim"])) {
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poiret+One&family=Roboto&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css\bootstrap.min.css">
   <title>Admin Base</title>
 </head>
 
 <body>
-<div class="menu no-gutters">
+  <div class="menu no-gutters">
     <div class="col-md-2 bg-dark pr-3 pt-4" style="z-index: 99;position: fixed;padding-bottom: 20%;padding-right: 19%; font-size: 1vw;">
       <ul class="nav flex-column">
         <li class="nav-item">
@@ -68,11 +68,11 @@ if (isset($_POST["kirim"])) {
         </li>
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <img src="foto_profile\blank-profile-picture-973460_1280.png" alt="" width="32" height="32" class="rounded-circle me-2">
             <strong>Selamat Datang <br><?php echo $_SESSION['email'] ?></strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+            <li><a class="dropdown-item" href="profile.php?id=<?php echo $_SESSION['id_users'] ?>">Profile</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -82,26 +82,25 @@ if (isset($_POST["kirim"])) {
       </ul>
     </div>
 
-
     <div class="col-md-10 p-5 pt-3" style="margin-left: 18%;">
       <h3><i class="ri-booklet-fill"></i>LAPORAN</h3>
       <p> dari <?php echo $tgl_mulai ?> hingga <?php echo $tgl_selesai ?></p>
       <hr><br>
-      <form action="" method="POST">
+      <form action="" method="PO18">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="form-group">
               <label for="">Tanggal Mulai</label>
               <input type="date" class="form-control" name="tglm" value="<?php echo $tgl_mulai ?>">
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="form-group">
               <label for="">Tanggal Selesai</label>
               <input type="date" class="form-control" name="tgls" value="<?php echo $tgl_selesai ?>">
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="form-group">
               <label for="">Status</label>
               <select name="status" id="" class="form-control">
@@ -114,7 +113,7 @@ if (isset($_POST["kirim"])) {
               </select>
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-4">
             <div class="form-group">
               <label for="">&nbsp;</label><br>
               <button class="btn btn-primary" name="kirim"><i class="ri-menu-fill"></i>Lihat Laporan</button>
@@ -155,6 +154,9 @@ if (isset($_POST["kirim"])) {
         </tfoot>
     </div>
   </div>
+
+
+
 
 
 

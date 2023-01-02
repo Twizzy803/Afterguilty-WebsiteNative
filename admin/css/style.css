@@ -6,86 +6,86 @@
 body {
   margin: 0;
   padding: 0;
-  background: #E3E3E3;
-  font-family: 'Roboto';
+  background: #e3e3e3;
+  font-family: "Roboto";
 }
 
-.navbar{
+.navbar {
   position: relative;
   background: #fff;
   box-shadow: 5px 0 10px #000;
 }
 
-.navbar a{
+.navbar a {
   display: flex;
   color: #000;
-  font-family: 'Poiret One';
+  font-family: "Poiret One";
   font-weight: lighter;
   font-size: 30px;
 }
 
-.container-fluid p{
+.container-fluid p {
   position: relative;
   top: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
   font-size: 20px;
 }
 
-.container-fluid form{
-    position: relative;
-    left: 20vw;
+.container-fluid form {
+  position: relative;
+  left: 20vw;
 }
 
-.icon{
+.icon {
   font-size: 2vw;
   margin-right: 10px;
 }
 
-.menu{
+.menu {
   display: flex;
   position: relative;
 }
-.menu_tambah{
+.menu_tambah {
   display: flex;
   position: relative;
 }
 
-.col-md-2 ul{
+.col-md-2 ul {
   margin-left: 16px;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   background-color: grey;
 }
 
-.card1{
-  background: rgb(183, 183, 183) ;
+.card1 {
+  background: rgb(183, 183, 183);
   border-radius: 7px;
   margin-left: 16px;
 }
 
-.detail{
+.detail {
   text-decoration: none;
 }
 
-.display-4{
-  font-family: 'Roboto';
+.display-4 {
+  font-family: "Roboto";
   font-weight: bold;
   color: #fff;
 }
 
-.card-body-icon{
+.card-body-icon {
   position: absolute;
   z-index: 0;
   top: 100px;
-  left: 34%;
+  left: 35%;
   opacity: 0.4;
   font-size: 110px;
 }
 
-.card2{
-  background: rgb(183, 183, 183) ;
+.card2 {
+  background: rgb(183, 183, 183);
   border-radius: 7px;
   margin-left: 32px;
 }

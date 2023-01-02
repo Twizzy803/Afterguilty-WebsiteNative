@@ -1,10 +1,6 @@
 <?php
 include "inclaude\db.php";
 include "inclaude\header.php";
-
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
 ?>
 
 

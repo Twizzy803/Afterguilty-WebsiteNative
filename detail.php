@@ -39,7 +39,7 @@ $detail = $ambil->fetch_assoc();
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <img src="hasil_gambar/<?php echo $detail['gambar'] ?>" alt="" class="img-responsive">
+            <img src="hasil_gambar/<?php echo $detail['gambar'] ?>" alt="" class="img-responsive" style="width: 90%;">
           </div>
           <div class="col-md-6">
             <h2><?php echo $detail['nama'] ?></h2>

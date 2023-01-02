@@ -9,7 +9,7 @@ if (isset($_POST['daftar'])) {
     $telp = $_POST['telp'];
     $alamat = $_POST['alamat'];
 
-    $query_users = "INSERT INTO `users`(`id_users`, `nama_lengkap`,`telp`, `alamat`) VALUES ('','$nama','telp','$alamat')";
+    $query_users = "INSERT INTO `users`(`id_users`, `nama_lengkap`,`telp`, `alamat`) VALUES ('','$nama','$telp','$alamat')";
     $insert_users = mysqli_query($connection, $query_users);
     if (!$insert_users) {
         die('Query Failed' . mysqli_error($connection));
