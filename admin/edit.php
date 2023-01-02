@@ -3,8 +3,8 @@
 include "inclaude\header.php";
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "masdaffa";
+$password = "olehmastegar";
 $database = "afterguilty";
 
 $connection = new mysqli($servername, $username, $password, $database);

@@ -3,8 +3,8 @@ if( isset($_GET["id_users"])){
     $id_users = $_GET["id_users"];
 
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "masdaffa";
+    $password = "olehmastegar";
     $database = "afterguilty";
 
     $connection = new mysqli($servername, $username, $password, $database);

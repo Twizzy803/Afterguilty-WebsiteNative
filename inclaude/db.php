@@ -1,8 +1,8 @@
 <?php
 // Setting DB
 $db['db_host'] = "localhost";
-$db['db_user'] = "root";
-$db['db_pass'] = "";
+$db['db_user'] = "masdaffa";
+$db['db_pass'] = "olehmastegar";
 $db['db_name'] = "afterguilty";
 // Mendefinisikan DB
 foreach ($db as $key => $value) {

@@ -86,7 +86,7 @@ if (isset($_POST["kirim"])) {
       <h3><i class="ri-booklet-fill"></i>LAPORAN</h3>
       <p> dari <?php echo $tgl_mulai ?> hingga <?php echo $tgl_selesai ?></p>
       <hr><br>
-      <form action="" method="PO18">
+      <form action="" method="POST">
         <div class="row">
           <div class="col-md-4">
             <div class="form-group">
@@ -105,7 +105,7 @@ if (isset($_POST["kirim"])) {
               <label for="">Status</label>
               <select name="status" id="" class="form-control">
                 <option value="">Pilih</option>
-                <option value="Belum dibayar  <?php echo $status == "Belum dibayar" ? "selected" : "";   ?>  ">Belum dibayar</option>
+                <option value="Barang diproses  <?php echo $status == "Barang diproses" ? "selected" : "";   ?>  ">Barang diproses</option>
                 <option value="Barang Dikirim  <?php echo $status == "Barang Dikirim" ? "selected" : "";   ?>  ">Barang Dikirim</option>
                 <option value="Barang sudah sampai  <?php echo $status == "Barang sudah sampai" ? "selected" : "";   ?>  ">Barang sudah sampai</option>
                 <option value="Lunas  <?php echo $status == "Lunas" ? "selected" : "";   ?>  ">Lunas</option>

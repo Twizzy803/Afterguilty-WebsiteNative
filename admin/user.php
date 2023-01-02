@@ -79,8 +79,8 @@ include "inclaude\header.php";
 
                     <?php
                     $servername = "localhost";
-                    $username = "root";
-                    $password = "";
+                    $username = "masdaffa";
+                    $password = "olehmastegar";
                     $database = "afterguilty";
 
                     $connection = mysqli_connect($servername, $username, $password, $database);

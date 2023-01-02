@@ -2,7 +2,7 @@
 include "inclaude\db.php";
 include "inclaude\header.php";
 
-$connection = new mysqli("localhost", "root", "", "afterguilty");
+$connection = new mysqli("localhost", "masdaffa", "olehmastegar", "afterguilty");
 ?>
 
 <!DOCTYPE html>

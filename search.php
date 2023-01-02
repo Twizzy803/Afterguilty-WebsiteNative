@@ -2,7 +2,7 @@
 include "inclaude\db.php";
 include "inclaude\header.php";
 
-$connection = new mysqli("localhost", "root", "", "afterguilty");
+$connection = new mysqli("localhost", "masdaffa", "olehmastegar", "afterguilty");
 ?>
 
 <!-- Fungsi Pencarian -->
@@ -12,7 +12,7 @@ $semuadata = array();
 $ambil = $connection->query("SELECT * FROM barang WHERE nama LIKE '%$keyword%'");
 while ($pecah = $ambil->fetch_assoc()) {
     $semuadata[] = $pecah;
-}?>
+} ?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -73,20 +73,20 @@ while ($pecah = $ambil->fetch_assoc()) {
     <hr>
     <h4 class="ml-4 mb-3">Hasil Pencarian : <?php $keyword ?></h4>
     <div class="row ml-2">
-        <?php foreach ($semuadata as $key => $value): ?>
-        <div class="col-md-3">
-            <div class="thumbnail shadow p-3 mb-5" style="border-radius: 10px;">
-                <img src="hasil_gambar/<?php echo $value['gambar']; ?>" style="width: 20vw; background-color: #00000010; border-radius: 5px;">
-                <div class="cantion">
-                    <a href="detail.php?id=<?php echo $value ['id']; ?>" style="color: #181818;">
-                        <h6><?php echo $value['nama'] ?></h6>
-                    </a>
-                    <h5>Rp.<?php echo number_format($value['harga']) ?></h5>
-                    <a href="beli.php?id=<?php echo $value ['id']; ?>" class="btn btn-outline-white mr-30" style="background: #222222;">Beli</a>
-                    <span class="btn btn-outline-white" style="color: #222222;">Stock: <?php echo $value['stock'] ?></span>
+        <?php foreach ($semuadata as $key => $value) : ?>
+            <div class="col-md-3">
+                <div class="thumbnail shadow p-3 mb-5" style="border-radius: 10px;">
+                    <img src="hasil_gambar/<?php echo $value['gambar']; ?>" style="width: 20vw; background-color: #00000010; border-radius: 5px;">
+                    <div class="cantion">
+                        <a href="detail.php?id=<?php echo $value['id']; ?>" style="color: #181818;">
+                            <h6><?php echo $value['nama'] ?></h6>
+                        </a>
+                        <h5>Rp.<?php echo number_format($value['harga']) ?></h5>
+                        <a href="beli.php?id=<?php echo $value['id']; ?>" class="btn btn-outline-white mr-30" style="background: #222222;">Beli</a>
+                        <span class="btn btn-outline-white" style="color: #222222;">Stock: <?php echo $value['stock'] ?></span>
+                    </div>
                 </div>
             </div>
-        </div>
         <?php endforeach ?>
     </div>
 
